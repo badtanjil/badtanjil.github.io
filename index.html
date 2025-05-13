@@ -2,160 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home - Md Badrul Hasan</title>
-  <!-- same CSS as before (keep your <style> block here) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Badrul Hasan - PhD Researcher</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #1a1a1a;  /* ash black */
-  color: #ffffff;        /* white text */
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  text-align: center;
-  padding: 60px 20px;
-  background: #2b2b2b;  /* charcoal */
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-header img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 2px solid #dcdcdc; /* silver border */
-}
-
-header h1 { margin: 10px 0 5px; font-size: 2.5em; }
-header h2 { margin: 0; font-weight: normal; color: #cccccc; }
-
-
-nav {
-  margin: 20px 0;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #cccccc;  /* light silver */
-  font-weight: bold;
-}
-
-nav a:hover, section a:hover {
-  color: #ffffff;
-  background: #007bff;
-  padding: 2px 4px;
-  border-radius: 4px;
-}
-
-section {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px;
-  background: #dcdcdc;  /* silver */
-  color: #000000;        /* black text for contrast */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  margin-top: 40px;
-  border-radius: 8px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #2b2b2b;  /* charcoal */
-  color: #cccccc;
-  font-size: 0.9em;
-  margin-top: 40px;
-}
-
-h3 { border-bottom: 1px solid #aaa; padding-bottom: 5px; }
-ol, ul { padding-left: 20px; }
-li { margin-bottom: 10px; }
-
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+    }
+    header h1 {
+      font-size: 2.5em;
+      color: #1a1a1a;
+    }
+    header h2 {
+      font-size: 1.2em;
+      color: #666;
+    }
+    nav {
+      background: #eaeaea;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+    nav a {
+      color: #444;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #007bff;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 280px;
+      margin-right: 20px;
+      background: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .sidebar img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .sidebar h3 {
+      margin-top: 15px;
+      color: #333;
+    }
+    .sidebar p, .sidebar a {
+      font-size: 0.9em;
+      color: #444;
+    }
+    .sidebar .buttons a {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      padding: 6px 12px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+    .main-content {
+      flex: 2;
+      background: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .main-content h3 {
+      color: #1a1a1a;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+    .main-content ul, .main-content p {
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8em;
+      color: #888;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="profile_1.jpg" alt="Profile Photo">
   <h1>Md Badrul Hasan</h1>
-  <h2> PhD Student | Mechanical Engineering </h2>
-  <h2> Data-Driven Machine Learning | Hurricane Simulations </h2>
-  <nav>
-    <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a>
-    <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
-    <a href="mailto:mdbadrh1@umbc.edu">Email</a>
-    <a href="Badrul_CV.pdf" target="_blank">CV</a>
-    <a href="publications.html">Publications</a>
-    <a href="awards.html">Awards</a>
-    <a href="news.html">News</a>
-  </nav>
+  <h2>PhD Student | Mechanical Engineering | Hurricane Simulations</h2>
 </header>
 
-<section>
-  <h3>About Me</h3>
-  <p>I am a PhD student in Mechanical Engineering working on machine learning and hurricane simulations. My research focuses on sub-grid scale stress modeling using data-driven methods to improve mesoscale hurricane boundary layer simulations.</p>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="publications.html">Publications</a>
+  <a href="awards.html">Awards</a>
+  <a href="news.html">News</a>
+  <a href="Badrul_CV.pdf" target="_blank">CV</a>
+</nav>
 
-  <h3>Education</h3>
-<ul>
-  <li><b>University of Maryland, Baltimore County (UMBC)</b> <br>
-    Ph.D. in Mechanical Engineering, Department of Mechanical Engineering <br>
-    <i>January 2019 – Present</i>
-  </li>
-  <li><b>University of Maryland, Baltimore County (UMBC)</b> <br>
-    M.S. in Mechanical Engineering, Department of Mechanical Engineering <br>
-    <i>December 2022</i>
-  </li>
-  <li><b>Bangladesh University of Engineering and Technology (BUET)</b> <br>
-    B.Sc. in Mechanical Engineering, Department of Mechanical Engineering <br>
-    <i>2013 – 2017</i>
-  </li>
-</ul>
+<div class="container">
+  <aside class="sidebar">
+    <img src="profile_1.jpg" alt="Profile Photo">
+    <h3>Contact</h3>
+    <p><strong>Email:</strong> <a href="mailto:mdbadrh1@umbc.edu">mdbadrh1@umbc.edu</a></p>
+    <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Link</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/badtanjil" target="_blank">Profile</a></p>
+    <div class="buttons">
+      <a href="Badrul_CV.pdf" target="_blank">Download CV</a>
+    </div>
+  </aside>
 
-  <h3>Work Experience</h3>
+  <main class="main-content">
+    <h3>About Me</h3>
+    <p>I am a PhD student in Mechanical Engineering working on machine learning and hurricane simulations...</p>
 
-<ul>
-  <li><b>Computational Mechanics Laboratory, UMBC</b> <br>
-    Graduate Research Assistant <br>
-    <i>January 2020 – Present</i>
+    <h3>Education</h3>
     <ul>
-      <li>Working on machine learning-based model development of back-scatter admitting sub-grid-scale (SGS) processes for hurricane simulations.</li>
-      <li>Detecting Stealthy Long-term Cyber Attacks on Wind Energy Assets with Physics-informed Neural Network Technologies. (UMBC 2024 Cybersecurity Leadership Exploratory Grant)</li>
+      <li><b>UMBC</b> — PhD in Mechanical Engineering (2019–Present)</li>
+      <li><b>UMBC</b> — MS in Mechanical Engineering (2022)</li>
+      <li><b>BUET</b> — BSc in Mechanical Engineering (2013–2017)</li>
     </ul>
-  </li>
-  <li><b>Joint Center for Earth Systems Technology (JCET), UMBC</b> <br>
-    Graduate Research Assistant <br>
-    <i>January 2020 – June 2022</i>
-    <ul>
-      <li>Compared the numerical dissipation of different weather prediction models like WRF and NUMA with Dr. Stephen Guimond supported by NSF grant AGS-2121366.</li>
-      <li>Visualized and compared the remote sensing radar data from Imaging Wind and Rain Airborne Profiler (IWRAP) with Dr. Stephen Guimond.</li>
-    </ul>
-  </li>
-  <li><b>University of Maryland, Baltimore County (UMBC)</b> <br>
-    Graduate Teaching Assistant <br>
-    <i>January 2019 – May 2024</i>
-    <ul>
-      <li>Conducted lab demonstrations and grading for ENME-432L, Fluids/Energy Lab with Dr. Meilin Yu.</li>
-      <li>Assisted Dr. James Baughan in teaching and grading for ENME-423, HVAC Design.</li>
-    </ul>
-  </li>
-</ul>
-  
-  <h3>Technical Strengths</h3>
-    <ul>
-      <li><b>Programming Languages:</b> Python, MATLAB, Fortran</li>
-      <li><b>Modeling and Analysis:</b> Ansys, Solidworks, COMSOL, AutoCAD</li>
-      <li><b>Software & Tools:</b> PyTorch, MS Office, LabView</li>
-    </ul>
-  
-</section>
 
-<footer>&copy; 2025 Md Badrul Hasan. All rights reserved.</footer>
+    <h3>Work Experience</h3>
+    <ul>
+      <li><b>Computational Mechanics Lab, UMBC</b> — Research Assistant (2020–Present)</li>
+      <li><b>JCET, UMBC</b> — Research Assistant (2020–2022)</li>
+      <li><b>UMBC</b> — Teaching Assistant (2019–2024)</li>
+    </ul>
+
+    <h3>Technical Strengths</h3>
+    <ul>
+      <li><b>Languages:</b> Python, MATLAB, Fortran</li>
+      <li><b>Modeling:</b> Ansys, Solidworks, COMSOL</li>
+      <li><b>Tools:</b> PyTorch, LaTeX, MS Office</li>
+    </ul>
+  </main>
+</div>
+
+<footer>
+  &copy; 2025 Md Badrul Hasan. All rights reserved.
+</footer>
+
 </body>
 </html>
+
