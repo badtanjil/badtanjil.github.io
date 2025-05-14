@@ -57,69 +57,59 @@
     nav a:hover {
       color: var(--accent-color);
     }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    .sidebar {
-      flex: 0 0 25%;
-      max-width: 280px;
-      background: var(--card-bg);
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    .sidebar img {
-      width: 100%;
-      max-width: 160px;
-      border-radius: 10px;
-      display: block;
-      margin: 0 auto;
-    }
-    .sidebar h3 {
-      margin-top: 15px;
-      color: var(--text-color);
+    .topbar-contact {
       text-align: center;
-    }
-    .sidebar p, .sidebar a {
+      background-color: #1a1a1a;
+      padding: 10px;
       font-size: 0.9em;
+    }
+    .topbar-contact a {
       color: #ccc;
-      text-align: center;
-      display: block;
+      margin: 0 10px;
+      text-decoration: none;
     }
-    .sidebar .buttons {
-      text-align: center;
-      margin-top: 10px;
+    .topbar-contact a:hover {
+      color: var(--accent-color);
     }
-    .sidebar .buttons a {
-      display: inline-block;
-      margin: 5px auto;
-      padding: 6px 12px;
+    .cv-btn {
       background: var(--accent-color);
       color: white;
-      text-decoration: none;
+      padding: 3px 8px;
       border-radius: 4px;
-      font-size: 0.85em;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
     }
     .main-content {
-      flex: 0 0 73%;
-      margin-left: auto;
       background: var(--card-bg);
       padding: 30px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
-
     .main-content h3 {
       color: var(--text-color);
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 15px;
       padding-bottom: 5px;
     }
-    .main-content ol, .main-content ul {
-      margin-left: 20px;
+    .main-content ul, .main-content p, .main-content ol, .main-content figure {
       margin-bottom: 25px;
+    }
+    .main-content li {
+      margin-left: 20px;
+    }
+    .main-content img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .main-content figcaption {
+      text-align: center;
+      font-size: 0.85em;
+      color: #aaa;
+      margin-top: 10px;
     }
     footer {
       text-align: center;
@@ -146,29 +136,24 @@
   <a href="Badrul_CV.pdf" target="_blank">CV</a>
 </nav>
 
-<div class="container">
-  <aside class="sidebar">
-    <img src="profile_1.jpg" alt="Profile Photo">
-    <h3>Contact</h3>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:mdbadrh1@umbc.edu">mdbadrh1@umbc.edu</a></p>
-    <p><i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a></p>
-    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a></p>
-    <div class="buttons">
-      <a href="Badrul_CV.pdf" target="_blank">Download CV</a>
-    </div>
-  </aside>
+<div class="topbar-contact">
+  <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
+  <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
+  <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
+</div>
 
+<div class="container">
   <main class="main-content">
     <h3>Journal Publications</h3>
     <ol>
-      <li><b>Hasan, M. B.</b>, Guimond, S. R., Yu, M., Reddy, S., & Giraldo, F. X. (2022). The Effects of Numerical Dissipation on Hurricane Rapid Intensification with Observational Heating. <i>Journal of Advances in Modeling Earth Systems</i>, 14, e2021MS002897. [<a href="https://doi.org/10.1029/2021MS002897" target="_blank">Link</a>]</li>
-      <li><b>Hasan, M. B.</b>, Yu, M., and Oates, T. (2025). Invariance-embedded Machine Learning Sub-grid-scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation I: Model Development and <i>a priori</i> Studies. <i>Physics of Fluids</i> (Under Review). [<a href="https://arxiv.org/abs/2504.14473" target="_blank">Link</a>]</li>
+      <li><b>Hasan, M. B.</b>, Guimond, S. R., Yu, M., Reddy, S., & Giraldo, F. X. (2022). The Effects of Numerical Dissipation on Hurricane Rapid Intensification with Observational Heating. <i>Journal of Advances in Modeling Earth Systems</i>, 14, e2021MS002897. [<a href="https://doi.org/10.1029/2021MS002897" target="_blank">link</a>]</li>
+      <li><b>Hasan, M. B.</b>, Yu, M., and Oates, T. (2025). Invariance-embedded Machine Learning Sub-grid-scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation I: Model Development and <i>a priori</i> Studies. <i>Physics of Fluids</i> (Under Review). [<a href="https://arxiv.org/abs/2504.14473" target="_blank">link</a>]</li>
     </ol>
 
     <h3>Conference Proceedings</h3>
     <ol>
-      <li><b>Hasan, M. B.</b>, Yu, M., & Xiao, H. (2023). Sub-grid Scale Modeling of Meso-scale Hurricane Boundary Layer Flows using Machine Learning. In <i>AIAA SCITECH 2023 Forum</i> (p. 2487). [<a href="https://doi.org/10.2514/6.2023-2487" target="_blank">Link</a>]</li>
-      <li><b>Hasan, M. B.</b>, Yu, M., & Oates, T. (2025). Comparison of Several Machine-Learning-Enhanced Sub-grid Scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation. In <i>AIAA SCITECH 2025 Forum</i> (p. 2212). [<a href="https://doi.org/10.2514/6.2025-2212" target="_blank">Link</a>]</li>
+      <li><b>Hasan, M. B.</b>, Yu, M., & Xiao, H. (2023). Sub-grid Scale Modeling of Meso-scale Hurricane Boundary Layer Flows using Machine Learning. In <i>AIAA SCITECH 2023 Forum</i> (p. 2487). [<a href="https://doi.org/10.2514/6.2023-2487" target="_blank">link</a>]</li>
+      <li><b>Hasan, M. B.</b>, Yu, M., & Oates, T. (2025). Comparison of Several Machine-Learning-Enhanced Sub-grid Scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation. In <i>AIAA SCITECH 2025 Forum</i> (p. 2212). [<a href="https://doi.org/10.2514/6.2025-2212" target="_blank">link</a>]</li>
       <li><b>Hasan, M. B.</b>, Yu, M., & Oates, T. (2025). Evaluating Machine Learning-Enhanced Sub-Grid Scale Stress Models With Invariance Embedding for Meso-Scale Hurricane Boundary Layer Flows. In <i>ASME 2025 Fluids Engineering Division Summer Meeting (FEDSM)</i> (Accepted).</li>
     </ol>
 
@@ -177,7 +162,7 @@
       <li>Assessment of Invariance-Embedded ML Models for Sub-Grid Scale Stress, COEIT Research Day Talks 2025</li>
       <li>Sub-grid Scale Modeling Using ML, COEIT Research Day 2024 (Talk & Poster)</li>
       <li>Poster Presentations at AGU Fall Meetings 2020 & 2021</li>
-      <li>JCET GRA Seminar Series, Mechanical Engineering Seminars, UMBC</li>
+      <li>GRA Seminar Series – UMBC Mechanical Engineering (2020–2021)</li>
     </ul>
   </main>
 </div>
