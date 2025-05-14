@@ -41,6 +41,28 @@
       font-size: 1.2em;
       color: #999;
     }
+    .topbar-contact {
+      text-align: center;
+      background-color: #1a1a1a;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+    .topbar-contact a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .topbar-contact a:hover {
+      color: var(--accent-color);
+    }
+    .cv-btn {
+      background: var(--accent-color);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    
     nav {
       background: var(--nav-bg);
       display: flex;
@@ -104,12 +126,13 @@
       font-size: 0.85em;
     }
     .main-content {
-      flex: 0 0 73%;
-      margin-left: auto;
+      flex: 1 1 100%;
+      width: 100%;
       background: var(--card-bg);
       padding: 30px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
 
     .main-content h3 {
       color: var(--text-color);
@@ -160,18 +183,14 @@
   <a href="Badrul_CV.pdf" target="_blank">CV</a>
 </nav>
 
-<div class="container">
-  <aside class="sidebar">
-    <img src="profile_1.jpg" alt="Profile Photo">
-    <h3>Contact</h3>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:mdbadrh1@umbc.edu">mdbadrh1@umbc.edu</a></p>
-    <p><i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a></p>
-    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a></p>
-    <div class="buttons">
-      <a href="Badrul_CV.pdf" target="_blank">Download CV</a>
-    </div>
-  </aside>
+<div class="topbar-contact">
+  <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
+  <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
+  <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a> |
+  <a href="Badrul_CV.pdf" class="cv-btn" target="_blank">CV</a>
+</div>
 
+<div class="container">
   <main class="main-content">
     <h3>News & Online Features</h3>
     <ul>
