@@ -16,31 +16,37 @@
       --accent-color: #007bff;
       --border-color: #333;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
     }
+
     header {
       background-color: var(--header-bg);
       padding: 20px;
       text-align: center;
       border-bottom: 2px solid var(--border-color);
     }
+
     header h1 {
       font-size: 2.5em;
       color: var(--text-color);
     }
+
     header h2 {
       font-size: 1.2em;
       color: #999;
     }
+
     nav {
       background: var(--nav-bg);
       display: flex;
@@ -49,14 +55,17 @@
       padding: 10px 0;
       border-bottom: 1px solid var(--border-color);
     }
+
     nav a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: bold;
     }
+
     nav a:hover {
       color: var(--accent-color);
     }
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -64,6 +73,7 @@
       margin: auto;
       padding: 20px;
     }
+
     .sidebar {
       flex: 1;
       min-width: 280px;
@@ -72,18 +82,22 @@
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
     .sidebar img {
       width: 100%;
       border-radius: 10px;
     }
+
     .sidebar h3 {
       margin-top: 15px;
       color: var(--text-color);
     }
+
     .sidebar p, .sidebar a {
       font-size: 0.9em;
       color: #ccc;
     }
+
     .sidebar .buttons a {
       display: inline-block;
       margin: 5px 5px 0 0;
@@ -94,21 +108,30 @@
       border-radius: 4px;
       font-size: 0.85em;
     }
+
     .main-content {
       flex: 2;
       background: var(--card-bg);
-      padding: 20px;
+      padding: 30px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
     .main-content h3 {
       color: var(--text-color);
       border-bottom: 1px solid var(--border-color);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       padding-bottom: 5px;
     }
+
     .main-content ul, .main-content p, .main-content ol {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
+
+    .main-content li {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+
     footer {
       text-align: center;
       font-size: 0.8em;
@@ -119,7 +142,6 @@
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -149,33 +171,35 @@
 
   <main class="main-content">
     <h3>About Me</h3>
-    <p>I am a PhD student in Mechanical Engineering working on machine learning and hurricane simulations...</p>
+    <p>I am a PhD student in Mechanical Engineering working on machine learning and hurricane simulations. My research focuses on sub-grid scale stress modeling using data-driven methods to improve mesoscale hurricane boundary layer simulations.</p>
 
     <h3>Education</h3>
     <ul>
-      <li><b>University of Maryland, Baltimore County (UMBC)</b> — Ph.D. in Mechanical Engineering, Department of Mechanical Engineering (January 2019 – Present)</li>
-      <li><b>University of Maryland, Baltimore County (UMBC)</b> — M.S. in Mechanical Engineering, Department of Mechanical Engineering (December 2022)</li>
-      <li><b>Bangladesh University of Engineering and Technology (BUET)</b> — B.Sc. in Mechanical Engineering, Department of Mechanical Engineering (2013 – 2017)</li>
+      <li><b>University of Maryland, Baltimore County (UMBC)</b> — Ph.D. in Mechanical Engineering (January 2019 – Present)</li>
+      <li><b>University of Maryland, Baltimore County (UMBC)</b> — M.S. in Mechanical Engineering (December 2022)</li>
+      <li><b>Bangladesh University of Engineering and Technology (BUET)</b> — B.Sc. in Mechanical Engineering (2013 – 2017)</li>
     </ul>
 
     <h3>Work Experience</h3>
     <ul>
       <li><b>Computational Mechanics Laboratory, UMBC</b> — Graduate Research Assistant (January 2020 – Present)
         <ul>
-          <li>Working on machine learning based model development of back-scatter admitting sub-grid-scale (SGS) processes for hurricane simulations.</li>
-          <li>Detecting Stealthy Long-term Cyber Attacks on Wind Energy Assets with Physics-informed Neural Network Technologies. (UMBC 2024 Cybersecurity Leadership Exploratory Grant)</li>
+          <li>Developing machine learning-based models for back-scatter admitting sub-grid-scale (SGS) processes in hurricane simulations.</li>
+          <li>Working on cyberattack detection on wind energy systems using physics-informed neural networks (2024 Cybersecurity Leadership Grant).</li>
         </ul>
       </li>
+
       <li><b>Joint Centre for Earth Systems Technology (JCET), UMBC</b> — Graduate Research Assistant (January 2020 – June 2022)
         <ul>
-          <li>Compared the numerical dissipation of different weather prediction models like WRF and NUMA with Dr. Stephen Guimond supported by the National Science Foundation (NSF) under grant AGS-2121366.</li>
-          <li>Visualized and Compared the remote sensing radar data from Imaging Wind and Rain Airborne Profiler (IWRAP) with Dr. Stephen Guimond.</li>
+          <li>Investigated numerical dissipation in WRF and NUMA models with support from NSF grant AGS-2121366.</li>
+          <li>Analyzed IWRAP remote sensing radar data under guidance of Dr. Stephen Guimond.</li>
         </ul>
       </li>
-      <li><b>University Of Maryland, Baltimore County (UMBC)</b> — Graduate Teaching Assistant (January 2019 – May 2024)
+
+      <li><b>University of Maryland, Baltimore County (UMBC)</b> — Graduate Teaching Assistant (January 2019 – May 2024)
         <ul>
-          <li>Conducted the lab demonstrations and grading on ENME-432L, Fluids/Energy Lab with Dr. Meilin Yu.</li>
-          <li>Assisted Dr. James Baughan on teaching and grading on the ENME-423, HVAC Design.</li>
+          <li>Led labs and grading for ENME-432L, Fluids/Energy Lab with Dr. Meilin Yu.</li>
+          <li>Assisted Dr. James Baughan with teaching and grading for ENME-423, HVAC Design.</li>
         </ul>
       </li>
     </ul>
