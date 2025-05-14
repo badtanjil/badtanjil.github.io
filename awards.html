@@ -65,28 +65,37 @@
       padding: 20px;
     }
     .sidebar {
-      flex: 1;
-      min-width: 280px;
-      margin-right: 20px;
+      flex: 0 0 25%;
+      max-width: 280px;
       background: var(--card-bg);
-      padding: 20px;
+      padding: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
     .sidebar img {
       width: 100%;
+      max-width: 160px;
       border-radius: 10px;
+      display: block;
+      margin: 0 auto;
     }
     .sidebar h3 {
       margin-top: 15px;
       color: var(--text-color);
+      text-align: center;
     }
     .sidebar p, .sidebar a {
       font-size: 0.9em;
       color: #ccc;
+      text-align: center;
+      display: block;
+    }
+    .sidebar .buttons {
+      text-align: center;
+      margin-top: 10px;
     }
     .sidebar .buttons a {
       display: inline-block;
-      margin: 5px 5px 0 0;
+      margin: 5px auto;
       padding: 6px 12px;
       background: var(--accent-color);
       color: white;
@@ -95,11 +104,13 @@
       font-size: 0.85em;
     }
     .main-content {
-      flex: 2;
+      flex: 0 0 73%;
+      margin-left: auto;
       background: var(--card-bg);
       padding: 30px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
     .main-content h3 {
       color: var(--text-color);
       border-bottom: 1px solid var(--border-color);
