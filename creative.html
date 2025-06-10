@@ -94,17 +94,29 @@
       text-decoration: underline;
     }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     }
-    .photo-grid img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
+
+  .photo-grid figure {
+    margin: 0;
+    text-align: center;
     }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    }
+
+  .photo-grid figcaption {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #ccc;
+    }
+
     footer {
       text-align: center;
       font-size: 0.8em;
@@ -173,20 +185,17 @@
         <figcaption>Sajek, Bandarban</figcaption>
         </figure>
         <figure>
-        <img src="photo4.jpg" alt="Shakrain 2017, Old Dhaka">
-        <figcaption>Shakrain 2017, Old Dhaka</figcaption>
-        </figure>
-        <figure>
-        <img src="photo5.jpg" alt="Downtown, Baltimore">
-        <figcaption>Holi 2014, Shakhari Bazar</figcaption>
-        </figure>
-        <figure>
-        <img src="photo6.jpg" alt="Downtown, Baltimore">
-        <figcaption>Shakrain 2017, Old Dhaka</figcaption>
-        </figure>
-        <img src="photo3.jpg" alt="Sajek, Bandarban">
         <img src="photo4.jpg" alt="Downtown, Baltimore">
+        <figcaption>Downtown, Baltimore</figcaption>
+        </figure>
+        <figure>
         <img src="photo5.jpg" alt="Downtown, Baltimore">
+        <figcaption>Downtown, Baltimore</figcaption>
+        </figure>
+        <figure>
+        <img src="photo6.jpg" alt="Halloween, Baltimore">
+        <figcaption>Halloween, Baltimore</figcaption>
+        </figure>
       </div>
     </main>
   </div>
