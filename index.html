@@ -120,30 +120,32 @@
     }
 
     .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;             /* ✅ Add spacing between sidebar and content */
-      justify-content: center;  /* ✅ Center the whole block */
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;                /* Even spacing between children */
+        justify-content: center;  /* Center container on screen */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
 
+    /* Sidebar styling */
     .sidebar {
-      flex: 1 1 300px;         /* ✅ Allows shrinking but keeps a minimum */
-      max-width: 350px;
-      background: var(--card-bg);
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        flex: 1 1 300px;          /* Grow, shrink, minimum width */
+        max-width: 350px;
+        background: var(--card-bg);
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
-  .main-content {
-    flex: 2 1 600px;
-    max-width: 800px;
-    background: var(--card-bg);
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
+    /* Main content styling */
+    .main-content {
+        flex: 2 1 600px;           /* Grow more, shrink, min width */
+        max-width: 800px;
+        background: var(--card-bg);
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
 
     .sidebar img {
       width: 100%;
