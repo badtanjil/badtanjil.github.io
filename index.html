@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
   <title>Home - Md Badrul Hasan</title>
@@ -39,7 +39,6 @@
 
     header h1 {
       font-size: 2.5em;
-      color: var(--text-color);
     }
 
     header h2 {
@@ -49,21 +48,69 @@
 
     nav {
       background: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
       border-bottom: 1px solid var(--border-color);
     }
 
-    nav a {
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: bold;
+      padding: 8px;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: var(--accent-color);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+        width: 100%;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     .container {
@@ -90,17 +137,13 @@
 
     .sidebar h3 {
       margin-top: 15px;
-      color: var(--text-color);
     }
 
-    .sidebar p,
-    .sidebar a,
-    .sidebar li {
+    .sidebar p, .sidebar a, .sidebar li {
       font-size: 1em;
       color: #ccc;
       line-height: 1.5;
     }
-
 
     .sidebar .buttons a {
       display: inline-block;
@@ -154,13 +197,19 @@
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News & Events</a>
-  <a href="Badrul_CV.pdf" target="_blank">CV</a>
-  <a href="creative.html">Creative Interests</a>
-
+  <div class="nav-container">
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="awards.html">Awards</a>
+      <a href="news.html">News & Events</a>
+      <a href="Badrul_CV.pdf" target="_blank">CV</a>
+      <a href="creative.html">Creative Interests</a>
+    </div>
+  </div>
 </nav>
 
 <div class="container">
@@ -181,7 +230,7 @@
       <li>Numerical weather prediction</li>
       <li>Cyber-physical security in wind energy</li>
       <li>Physics-informed neural networks</li>
-</ul>
+    </ul>
   </aside>
 
   <main class="main-content">
