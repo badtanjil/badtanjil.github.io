@@ -122,27 +122,29 @@
     .container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
+      gap: 20px;             /* ✅ Add spacing between sidebar and content */
+      justify-content: center;  /* ✅ Center the whole block */
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
 
     .sidebar,
-    .main-content {
-      min-width: 300px;
-      max-width: 100%;
-    }
-
     .sidebar {
-      flex: 1;
-      min-width: 280px;
-      margin-right: 20px;
+      flex: 1 1 300px;         /* ✅ Allows shrinking but keeps a minimum */
+      max-width: 350px;
       background: var(--card-bg);
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
+  .main-content {
+    flex: 2 1 600px;
+    max-width: 800px;
+    background: var(--card-bg);
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
 
     .sidebar img {
       width: 100%;
