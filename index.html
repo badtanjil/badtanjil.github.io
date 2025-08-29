@@ -116,11 +116,18 @@
     .container {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;  /* ✅ Ensures even spacing */
+      align-items: flex-start;  /* Optional: aligns top edges */
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;           /* ✅ Centers it horizontally */
       padding: 20px;
     }
 
+    .sidebar,
+    .main-content {
+      min-width: 300px;     /* ✅ Prevents shrinking too much */
+      max-width: 100%;      /* ✅ Keeps it responsive */
+    }
     .sidebar {
       flex: 1;
       min-width: 280px;
@@ -187,6 +194,44 @@
       margin-top: 40px;
       border-top: 1px solid var(--border-color);
     }
+
+    /* Responsive Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: var(--text-color);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    display: none;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  nav.active a {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -196,6 +241,11 @@
   <h2>PhD Candidate | Mechanical Engineering | Numerical Simulations</h2>
 </header>
 
+<div class="menu-toggle" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 <nav>
   <div class="nav-container">
     <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
@@ -281,5 +331,13 @@
   &copy; 2025 Md Badrul Hasan. All rights reserved.
 </footer>
 
+
+<script>
+  function toggleMenu() {
+    document.querySelector('nav').classList.toggle('active');
+  }
+</script>
 </body>
+
+  
 </html>
