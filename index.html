@@ -63,7 +63,17 @@
     .nav-links {
       display: flex;
       gap: 20px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;  /* ✅ PREVENTS WRAPPING ON DESKTOP */
+      flex: 1;             /* ✅ MAKES IT STRETCH TO FILL SPACE */
+      justify-content: center;  /* ✅ EVENLY DISTRIBUTES ITEMS */
+      overflow-x: auto;    /* ✅ ALLOWS SCROLL IF TOO MANY ITEMS */
+    }
+
+    .nav-links::-webkit-scrollbar {
+      height: 6px;
+    }
+    .nav-links::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
     }
 
     .nav-links a {
