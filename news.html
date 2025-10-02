@@ -94,18 +94,34 @@
 
      /* Main content styling */
     .main-content {
-        flex: 2 1 600px;           /* Grow more, shrink, min width */
-        max-width: 900px;
-        background: var(--card-bg);
-        padding: 30px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
+  flex: 1 1 100%;
+  max-width: 900px;
+  background: var(--card-bg);
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 0 auto;
+}
+
     .main-content h3 {
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 15px;
       padding-bottom: 5px;
     }
-    .main-content ul, .main-content p, .main-content figure { margin-bottom: 25px; }
+    .main-content ul, .main-content p, 
+    .main-content figure {
+  margin: 20px auto;
+  text-align: center;
+}
+.main-content figure img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.main-content figure figcaption {
+  font-size: 0.85em;
+  color: #aaa;
+  margin-top: 8px;
+}
+
     .main-content li { margin-left: 20px; margin-bottom: 10px; }
 
     /* Photo grid */
