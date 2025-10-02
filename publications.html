@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+  <title>Publications - Md Badrul Hasan</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #1e1e1e;
+      --nav-bg: #1c1c1c;
+      --card-bg: #1f1f1f;
+      --accent-color: #007bff;
+      --border-color: #333;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--border-color);
+    }
+    header h1 { font-size: 2.5em; }
+    header h2 { font-size: 1.2em; color: #999; }
+
+    /* NAV (matches index.html) */
+    nav { background: var(--nav-bg); border-bottom: 1px solid var(--border-color); }
+    .nav-container {
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1200px; margin: auto; padding: 10px 20px;
+    }
+    .nav-links {
+      display: flex; gap: 20px; flex-wrap: nowrap; flex: 1;
+      justify-content: center; overflow-x: auto;
+    }
+    .nav-links::-webkit-scrollbar { height: 6px; }
+    .nav-links::-webkit-scrollbar-thumb { background: var(--accent-color); }
+    .nav-links a {
+      color: var(--text-color); text-decoration: none; font-weight: bold; padding: 8px;
+    }
+    .nav-links a:hover { color: var(--accent-color); }
+
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; margin-left: 10px; }
+    .menu-toggle span {
+      height: 3px; width: 25px; background: var(--text-color); margin: 4px 0; transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; flex-direction: column; width: 100%; }
+      .nav-links a { padding: 10px 20px; width: 100%; border-top: 1px solid var(--border-color); }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: flex; }
+    }
+
+    /* PAGE LAYOUT (centered card like index main-content) */
+    .container {
+      max-width: 1200px; margin: 0 auto; padding: 20px;
+      display: flex; justify-content: center;
+    }
+    .main-content {
+      flex: 1 1 800px; max-width: 900px;
+      background: var(--card-bg); padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .main-content h3 {
+      color: var(--text-color);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 15px; padding-bottom: 5px;
+    }
+    .main-content ol, .main-content ul, .main-content p { margin-bottom: 20px; }
+    .main-content li { margin-left: 20px; }
+    .main-content a { color: var(--accent-color); text-decoration: none; }
+    .main-content a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center; font-size: 0.8em; color: #aaa;
+      padding: 20px; margin-top: 40px; border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Md Badrul Hasan</h1>
+  <h2>PhD Candidate | Mechanical Engineering | Numerical Simulations</h2>
+</header>
+
+<nav>
+  <div class="nav-container">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="awards.html">Awards</a>
+      <a href="news.html">News & Events</a>
+      <a href="Badrul_CV.pdf" target="_blank">CV</a>
+      <a href="creative.html">Creative Interests</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <main class="main-content">
+    <h3>Journal Publications</h3>
+    <ol>
+      <li>
+        Hasan, M. B., Guimond, S. R., Yu, M., Reddy, S., &amp; Giraldo, F. X. (2022).
+        The Effects of Numerical Dissipation on Hurricane Rapid Intensification with Observational Heating.
+        <i>Journal of Advances in Modeling Earth Systems</i>, 14, e2021MS002897.
+        [<a href="https://doi.org/10.1029/2021MS002897" target="_blank">link</a>]
+      </li>
+      <li>
+        Hasan, M. B., Yu, M., and Oates, T. (2025).
+        Invariance-embedded Machine Learning Sub-grid-scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation I:
+        Model Development and <i>a priori</i> Studies. In Preparation.
+        [<a href="https://arxiv.org" target="_blank">link</a>]
+      </li>
+    </ol>
+
+    <h3>Conference Proceedings</h3>
+    <ol>
+      <li>
+        Hasan, M. B., Yu, M., &amp; Xiao, H. (2023).
+        Sub-grid Scale Modeling of Meso-scale Hurricane Boundary Layer Flows using Machine Learning.
+        In <i>AIAA SCITECH 2023 Forum</i> (p. 2487).
+        [<a href="https://doi.org/10.2514/6.2023-2487" target="_blank">link</a>]
+      </li>
+      <li>
+        Hasan, M. B., Yu, M., &amp; Oates, T. (2025).
+        Comparison of Several Machine-Learning-Enhanced Sub-grid Scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation.
+        In <i>AIAA SCITECH 2025 Forum</i> (p. 2212).
+        [<a href="https://doi.org/10.2514/6.2025-2212" target="_blank">link</a>]
+      </li>
+      <li>
+        Hasan, M. B., Yu, M., &amp; Oates, T. (2025).
+        Evaluating Machine Learning-Enhanced Sub-Grid Scale Stress Models With Invariance Embedding for Meso-Scale Hurricane Boundary Layer Flows.
+        In <i>ASME 2025 Fluids Engineering Division Summer Meeting (FEDSM)</i> (Accepted).
+      </li>
+    </ol>
+
+    <h3>Presentations</h3>
+    <ul>
+      <li>
+        <a href="https://engineering.jhu.edu/ceafm/annual-symposia/" target="_blank">
+          Invariance-Embedded Machine Learning Sub-Grid-Scale Stress Models for Meso-Scale Hurricane Boundary Layer Simulations
+        </a> — 2025 Research Symposium on Environmental and Applied Fluid Dynamics, The George Washington University
+      </li>
+      <li>Assessment of Invariance-Embedded ML Models for Sub-Grid Scale Stress, COEIT Research Day Talks 2025</li>
+      <li>Sub-grid Scale Modeling Using ML, COEIT Research Day 2024 (Talk &amp; Poster)</li>
+      <li>Poster Presentations at AGU Fall Meetings 2020 &amp; 2021</li>
+      <li>UMBC JCET GRA Seminar Series 2020 &amp; 2021</li>
+      <li>GRA Seminar Series – UMBC Mechanical Engineering (2020)</li>
+    </ul>
+  </main>
+</div>
+
+<footer>
+  &copy; 2025 Md Badrul Hasan. All rights reserved.
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
