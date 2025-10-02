@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
   <title>Awards - Md Badrul Hasan</title>
@@ -16,105 +16,122 @@
       --accent-color: #007bff;
       --border-color: #333;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
+      background: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
     }
+
     header {
-      background-color: var(--header-bg);
+      background: var(--header-bg);
       padding: 20px;
       text-align: center;
       border-bottom: 2px solid var(--border-color);
     }
-    header h1 {
-      font-size: 2.5em;
-      color: var(--text-color);
-    }
-    header h2 {
-      font-size: 1.2em;
-      color: #999;
-    }
+
+    header h1 { font-size: 2.5em; }
+    header h2 { font-size: 1.2em; color: #999; }
+
     nav {
       background: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
       border-bottom: 1px solid var(--border-color);
     }
-    nav a {
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;
+      flex: 1;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    .nav-links a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: bold;
+      padding: 8px;
     }
-    nav a:hover {
-      color: var(--accent-color);
+
+    .nav-links a:hover { color: var(--accent-color); }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
-    .topbar-contact {
-      text-align: center;
-      background-color: #1a1a1a;
-      padding: 10px;
-      font-size: 0.9em;
+
+    .menu-toggle span {
+      height: 3px; width: 25px;
+      background: var(--text-color);
+      margin: 4px 0;
+      transition: 0.4s;
     }
-    .topbar-contact a {
-      color: #ccc;
-      margin: 0 10px;
-      text-decoration: none;
+
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; flex-direction: column; width: 100%; }
+      .nav-links a { padding: 10px 20px; width: 100%; border-top: 1px solid var(--border-color); }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: flex; }
     }
-    .topbar-contact a:hover {
-      color: var(--accent-color);
-    }
-    .cv-btn {
-      background: var(--accent-color);
-      color: white;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
+
     .container {
       display: flex;
       flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 20px;
     }
+
     .main-content {
-      flex: 1 1 100%;
-      width: 100%;
+      flex: 1 1 800px;
       background: var(--card-bg);
       padding: 30px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
     .main-content h3 {
-      color: var(--text-color);
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 15px;
       padding-bottom: 5px;
     }
-    .main-content ul, .main-content p, .main-content ol, .main-content figure {
+
+    .main-content ul, .main-content p, .main-content figure {
       margin-bottom: 25px;
     }
-    .main-content li {
-      margin-left: 20px;
-    }
+
+    .main-content li { margin-left: 20px; margin-bottom: 10px; }
+
     .main-content img {
       display: block;
       margin: 0 auto;
       max-width: 50%;
       border-radius: 10px;
     }
+
     .main-content figcaption {
       text-align: center;
       font-size: 0.85em;
       color: #aaa;
       margin-top: 10px;
     }
+
     footer {
       text-align: center;
       font-size: 0.8em;
@@ -133,20 +150,20 @@
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News & Events</a>
-  <a href="Badrul_CV.pdf" target="_blank">CV</a>
-  <a href="creative.html">Creative Interests</a>
-
+  <div class="nav-container">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="awards.html">Awards</a>
+      <a href="news.html">News & Events</a>
+      <a href="Badrul_CV.pdf" target="_blank">CV</a>
+      <a href="creative.html">Creative Interests</a>
+    </div>
+  </div>
 </nav>
-
-<div class="topbar-contact">
-  <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
-  <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
-  <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
-</div>
 
 <div class="container">
   <main class="main-content">
@@ -164,8 +181,8 @@
       <figcaption>Hasan holding the AIAA Professor Kirti "Karman" Ghia Memorial Award plaque at SciTech 2025. (Photo courtesy of AIAA)</figcaption>
     </figure>
     <ul>
-      <li><b>Graduate Student Association (GSA) Professional Development Grant, December 2024, UMBC</b><br>
-        Provided support for professional development and thesis-related research expenses.</li>
+      <li><b>Graduate Student Association (GSA) Professional Development Grant, UMBC</b><br>
+        Recipient in <b>May, 2025</b>, and <b>December, 2024</b>; Provided support for professional development and thesis-related research expenses.</li>
       <li><b>University Technical Scholarship (2013–2017)</b><br>
         Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh.</li>
     </ul>
@@ -175,6 +192,12 @@
 <footer>
   &copy; 2025 Md Badrul Hasan. All rights reserved.
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
