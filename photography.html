@@ -16,84 +16,189 @@
       --accent-color: #007bff;
       --border-color: #333;
     }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      margin: 0;
-      padding: 0;
+      line-height: 1.6;
     }
+
     header {
       background-color: var(--header-bg);
       padding: 20px;
       text-align: center;
       border-bottom: 2px solid var(--border-color);
     }
+
     header h1 {
       font-size: 2.5em;
-      margin: 0;
-      color: var(--text-color);
     }
+
     header h2 {
       font-size: 1.2em;
       color: #999;
     }
+
     nav {
       background: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
       border-bottom: 1px solid var(--border-color);
     }
-    nav a {
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;  /* ✅ PREVENTS WRAPPING ON DESKTOP */
+      flex: 1;             /* ✅ MAKES IT STRETCH TO FILL SPACE */
+      justify-content: center;  /* ✅ EVENLY DISTRIBUTES ITEMS */
+      overflow-x: auto;    /* ✅ ALLOWS SCROLL IF TOO MANY ITEMS */
+    }
+
+    .nav-links::-webkit-scrollbar {
+      height: 6px;
+    }
+    .nav-links::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+    }
+
+    .nav-links a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: bold;
+      padding: 8px;
     }
-    nav a:hover {
+
+    .nav-links a:hover {
       color: var(--accent-color);
     }
-    .topbar-contact {
-      text-align: center;
-      background-color: #1a1a1a;
-      padding: 10px;
-      font-size: 0.9em;
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: 10px;
     }
-    .topbar-contact a {
-      color: #ccc;
-      margin: 0 10px;
-      text-decoration: none;
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: var(--text-color);
+      margin: 4px 0;
+      transition: 0.4s;
     }
-    .topbar-contact a:hover {
-      color: var(--accent-color);
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+        width: 100%;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
+
     .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;                /* Even spacing between children */
+        justify-content: center;  /* Center container on screen */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
+
+    /* Sidebar styling */
+    .sidebar {
+        flex: 1 1 300px;          /* Grow, shrink, minimum width */
+        max-width: 350px;
+        background: var(--card-bg);
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    /* Main content styling */
     .main-content {
-      background: var(--card-bg);
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        flex: 2 1 600px;           /* Grow more, shrink, min width */
+        max-width: 800px;
+        background: var(--card-bg);
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
+    .sidebar img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .sidebar h3 {
+      margin-top: 15px;
+    }
+
+    .sidebar p, .sidebar a, .sidebar li {
+      font-size: 1em;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .sidebar .buttons a {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      padding: 6px 12px;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
     .main-content h3 {
       color: var(--text-color);
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 15px;
       padding-bottom: 5px;
     }
-    .main-content .entry {
-      margin-bottom: 30px;
+
+    .main-content ul, .main-content p, .main-content ol {
+      margin-bottom: 25px;
     }
-    .main-content a {
-      color: var(--accent-color);
-      text-decoration: none;
+
+    .main-content li {
+      margin-left: 20px;
+      margin-bottom: 10px;
     }
-    .main-content a:hover {
-      text-decoration: underline;
-    }
+
     footer {
       text-align: center;
       font-size: 0.8em;
@@ -160,5 +265,11 @@
   <footer>
     &copy; 2025 Md Badrul Hasan. All rights reserved.
   </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+</script>
 </body>
 </html>
