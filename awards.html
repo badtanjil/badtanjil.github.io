@@ -159,35 +159,73 @@
   color: var(--accent-color);
 }
 
-    /* Dropdown styling */
+    /* --- Dropdown (desktop) --- */
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown > a {
+  padding: 8px;                 /* match other links */
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.dropdown:hover > a {
+  color: var(--accent-color);
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--card-bg);
-  min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 10;
+  top: 100%;                    /* right below the trigger */
+  left: 0;
+  min-width: 200px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.25);
+  z-index: 20;
+  overflow: hidden;
 }
 
 .dropdown-content a {
   display: block;
-  padding: 10px;
+  padding: 10px 12px;
   color: var(--text-color);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .dropdown-content a:hover {
-  background-color: var(--nav-bg);
+  background: var(--nav-bg);
   color: var(--accent-color);
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: block;               /* hover open on desktop */
+}
+
+/* --- Mobile behavior --- */
+@media (max-width: 768px) {
+  /* your .nav-links turns into a column; make dropdown fill width */
+  .dropdown { width: 100%; }
+  .dropdown > a { width: 100%; padding: 10px 20px; }
+  .dropdown-content {
+    position: static;           /* stack inside the flow */
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    padding-left: 8px;          /* slight indent for items */
+  }
+  .dropdown-content a {
+    padding: 8px 20px 8px 28px; /* align with other items */
+  }
+  /* open by click (via .open class from JS below) */
+  .dropdown:not(.open) .dropdown-content { display: none; }
+  .dropdown.open .dropdown-content { display: block; }
 }
 
 
@@ -207,21 +245,21 @@
     </div>
     <div class="nav-links" id="navLinks">
   <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News & Events</a>
+<a href="publications.html">Publications</a>
+<a href="awards.html">Awards</a>
+<a href="news.html">News & Events</a>
 
-  <!-- ✅ Dropdown -->
-  <div class="dropdown">
-    <a href="#">CV / Resume ▾</a>
-    <div class="dropdown-content">
-      <a href="Badrul_CV.pdf" target="_blank">Full CV</a>
-      <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank">1-Page Resume</a>
-    </div>
+<!-- ✅ CV / Resume dropdown -->
+<div class="dropdown">
+  <a href="#" class="dropdown-trigger">CV / Resume ▾</a>
+  <div class="dropdown-content">
+    <a href="Badrul_CV.pdf" target="_blank">Full CV</a>
+    <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank">1-Page Resume</a>
   </div>
-
-  <a href="creative.html">Creative Interests</a>
 </div>
+
+<a href="creative.html">Creative Interests</a>
+
 
   </div>
 </nav>
@@ -265,7 +303,27 @@
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('active');
   }
+
+  // Mobile: open/close dropdown on tap
+  document.addEventListener('click', function (e) {
+    const trigger = e.target.closest('.dropdown-trigger');
+    const anyDropdown = e.target.closest('.dropdown');
+
+    // If tapped on the trigger, toggle .open
+    if (trigger) {
+      e.preventDefault();
+      const dd = trigger.closest('.dropdown');
+      dd.classList.toggle('open');
+      return;
+    }
+
+    // Tap outside dropdown closes it (mobile)
+    document.querySelectorAll('.dropdown.open').forEach(d => {
+      if (!anyDropdown) d.classList.remove('open');
+    });
+  });
 </script>
+
 
 </body>
 </html>
