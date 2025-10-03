@@ -118,38 +118,44 @@
       color: var(--accent-color);
     }
 
-    /* Dropdown Menu */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+    .topbar-contact {
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 10px;
+    font-size: 0.9em;
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--nav-bg);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-  z-index: 1;
-}
+  .topbar-contact a {
+    color: #ccc;
+    margin: 0 8px;
+    text-decoration: none;
+  }
 
-.dropdown-content a {
-  color: var(--text-color);
-  padding: 10px 15px;
-  text-decoration: none;
-  display: block;
-  border-bottom: 1px solid var(--border-color);
-}
+  .topbar-contact a:hover {
+    color: var(--accent-color);
+  }
 
-.dropdown-content a:hover {
-  background-color: #2a2a2a;
-  color: var(--accent-color);
-}
+  /* Buttons */
+  .contact-buttons {
+    margin-top: 8px;
+  }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
+  .btn-small {
+    display: inline-block;
+    margin: 5px 6px;
+    padding: 6px 12px;
+    background: var(--accent-color);
+    color: white !important;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .btn-small:hover {
+    background: #0056b3; /* darker hover */
+  }
+    
   </style>
 </head>
 <body>
@@ -168,31 +174,24 @@
   <a href="publications.html">Publications</a>
   <a href="awards.html">Awards</a>
   <a href="news.html">News & Events</a>
-  
-  <!-- ✅ Replace this -->
-  <!-- <a href="Badrul_CV.pdf" target="_blank">CV</a> -->
-
-  <!-- ✅ With this -->
-  <li class="dropdown">
-    <a href="#">CV / Resume ▾</a>
-    <div class="dropdown-content">
-      <a href="Badrul_CV.pdf" target="_blank">Full CV</a>
-      <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank">1-Page Resume</a>
-    </div>
-  </li>
-
   <a href="creative.html">Creative Interests</a>
 </div>
 
     </div>
   </nav>
 
-  <!-- ✅ Add this immediately after nav -->
-  <div class="topbar-contact">
+  <!-- ✅ Contact Bar with Separate Row for Buttons -->
+<div class="topbar-contact">
+  <div class="contact-links">
     <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
     <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
     <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
   </div>
+  <div class="contact-buttons">
+    <a href="Badrul_CV.pdf" target="_blank" class="btn-small">Full CV</a>
+    <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank" class="btn-small">Resume</a>
+  </div>
+</div>
   
   <div class="container">
     <main class="main-content">
