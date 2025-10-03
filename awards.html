@@ -159,76 +159,44 @@
   color: var(--accent-color);
 }
 
-    /* --- Dropdown (desktop) --- */
-.dropdown {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.dropdown > a {
-  padding: 8px;                 /* match other links */
-  color: var(--text-color);
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.dropdown:hover > a {
-  color: var(--accent-color);
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;                    /* right below the trigger */
-  left: 0;
-  min-width: 200px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0,0,0,.25);
-  z-index: 20;
-  overflow: hidden;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 12px;
-  color: var(--text-color);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.dropdown-content a:hover {
-  background: var(--nav-bg);
-  color: var(--accent-color);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;               /* hover open on desktop */
-}
-
-/* --- Mobile behavior --- */
-@media (max-width: 768px) {
-  /* your .nav-links turns into a column; make dropdown fill width */
-  .dropdown { width: 100%; }
-  .dropdown > a { width: 100%; padding: 10px 20px; }
-  .dropdown-content {
-    position: static;           /* stack inside the flow */
-    border: 0;
-    box-shadow: none;
-    background: transparent;
-    padding-left: 8px;          /* slight indent for items */
+.topbar-contact {
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 10px;
+    font-size: 0.9em;
   }
-  .dropdown-content a {
-    padding: 8px 20px 8px 28px; /* align with other items */
+
+  .topbar-contact a {
+    color: #ccc;
+    margin: 0 8px;
+    text-decoration: none;
   }
-  /* open by click (via .open class from JS below) */
-  .dropdown:not(.open) .dropdown-content { display: none; }
-  .dropdown.open .dropdown-content { display: block; }
-}
 
+  .topbar-contact a:hover {
+    color: var(--accent-color);
+  }
 
+  /* Buttons */
+  .contact-buttons {
+    margin-top: 8px;
+  }
+
+  .btn-small {
+    display: inline-block;
+    margin: 5px 6px;
+    padding: 6px 12px;
+    background: var(--accent-color);
+    color: white !important;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .btn-small:hover {
+    background: #0056b3; /* darker hover */
+  }
+    
   </style>
 </head>
 <body>
@@ -248,27 +216,23 @@
 <a href="publications.html">Publications</a>
 <a href="awards.html">Awards</a>
 <a href="news.html">News & Events</a>
-
-<!-- ✅ CV / Resume dropdown -->
-<div class="dropdown">
-  <a href="#" class="dropdown-trigger">CV / Resume ▾</a>
-  <div class="dropdown-content">
-    <a href="Badrul_CV.pdf" target="_blank">Full CV</a>
-    <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank">1-Page Resume</a>
-  </div>
-</div>
-
 <a href="creative.html">Creative Interests</a>
 
 
   </div>
 </nav>
 
-  <!-- ✅ Contact Bar -->
+<!-- ✅ Contact Bar with Separate Row for Buttons -->
 <div class="topbar-contact">
-  <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
-  <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
-  <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
+  <div class="contact-links">
+    <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
+    <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
+    <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
+  </div>
+  <div class="contact-buttons">
+    <a href="Badrul_CV.pdf" target="_blank" class="btn-small">Full CV</a>
+    <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank" class="btn-small">Resume</a>
+  </div>
 </div>
 
 <div class="container">
