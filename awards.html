@@ -196,7 +196,20 @@
   .btn-small:hover {
     background: #0056b3; /* darker hover */
   }
-    
+    /* Content (body) links – match site accent blue */
+.main-content a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+.main-content a:hover,
+.main-content a:focus {
+  text-decoration: underline;
+}
+/* Optional: a softer blue for visited links */
+.main-content a:visited {
+  color: #6aa9ff; /* tweak if you prefer */
+}
+
   </style>
 </head>
 <body>
