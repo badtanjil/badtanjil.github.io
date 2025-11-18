@@ -143,8 +143,14 @@
     @media (max-width: 600px) {
       .photo-grid { grid-template-columns: 1fr; }
     }
+    .photo-grid figure {
+      margin: 0;
+      text-align: center;
+    }
     .photo-grid img {
       width: 100%;
+      height: 250px;
+      object-fit: cover;
       border-radius: 10px;
     }
     .photo-grid figcaption {
@@ -290,7 +296,7 @@
   </p>
     <figure>
       <img src="guest_lecture.jpg" alt="Guest Lecture Photo" 
-       style="width:55%; max-width:420px; border-radius:10px;">
+       style="width:65%; max-width:420px; border-radius:10px;">
       <figcaption>Discussing WRF hurricane simulations</figcaption>
     </figure>
   
