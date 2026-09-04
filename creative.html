@@ -1,243 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css"/>
-  <title>Creative Works - Md Badrul Hasan</title>
-  <style>
-    :root {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --header-bg: #1e1e1e;
-      --nav-bg: #1c1c1c;
-      --card-bg: #1f1f1f;
-      --accent-color: #007bff;
-      --border-color: #333;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography — Md Badrul Hasan</title>
+<meta name="description" content="Documentary and street photography by Md Badrul Hasan, including work made in Old Dhaka, the Chittagong Hill Tracts and Baltimore.">
+<link rel="canonical" href="https://badtanjil.github.io/creative.html">
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--header-bg);
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid var(--border-color);
-    }
-    header h1 { font-size: 2.5em; margin: 0; }
-    header h2 { font-size: 1.2em; color: #999; }
-
-    /* NAV (same as index.html) */
-    nav { background: var(--nav-bg); border-bottom: 1px solid var(--border-color); }
-    .nav-container {
-      display: flex; justify-content: space-between; align-items: center;
-      max-width: 1200px; margin: auto; padding: 10px 20px;
-    }
-    .nav-links {
-      display: flex; gap: 20px; flex-wrap: nowrap; flex: 1;
-      justify-content: center; overflow-x: auto;
-    }
-    .nav-links::-webkit-scrollbar { height: 6px; }
-    .nav-links::-webkit-scrollbar-thumb { background: var(--accent-color); }
-    .nav-links a {
-      color: var(--text-color); text-decoration: none; font-weight: bold; padding: 8px;
-    }
-    .nav-links a:hover { color: var(--accent-color); }
-
-    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
-    .menu-toggle span {
-      height: 3px; width: 25px; background: var(--text-color); margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      .nav-container { flex-direction: column; align-items: flex-start; }
-      .nav-links { display: none; flex-direction: column; width: 100%; }
-      .nav-links a { padding: 10px 20px; width: 100%; border-top: 1px solid var(--border-color); }
-      .nav-links.active { display: flex; }
-      .menu-toggle { display: flex; }
-    }
-
-    /* PAGE LAYOUT */
-    .container {
-      display: flex; justify-content: center;
-      max-width: 1200px; margin: 0 auto; padding: 20px;
-    }
-    .main-content {
-      flex: 1 1 800px; max-width: 900px;
-      background: var(--card-bg); padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      margin: 0 auto;
-    }
-    .main-content h3 {
-      color: var(--text-color);
-      border-bottom: 1px solid var(--border-color);
-      margin-bottom: 15px; padding-bottom: 5px;
-    }
-    .main-content p, .main-content .entry { margin-bottom: 25px; }
-    .main-content a { color: var(--accent-color); text-decoration: none; }
-    .main-content a:hover { text-decoration: underline; }
-
-    /* Photo grid */
-    .photo-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 20px; margin-top: 20px;
-    }
-    @media (max-width: 900px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .photo-grid { grid-template-columns: 1fr; } }
-
-    .photo-grid figure { margin: 0; text-align: center; }
-    .photo-grid img { width: 100%; border-radius: 10px; }
-    .photo-grid figcaption { margin-top: 8px; font-size: 0.9em; color: #ccc; }
-
-    footer {
-      text-align: center; font-size: 0.8em; color: #aaa;
-      padding: 20px; margin-top: 40px; border-top: 1px solid var(--border-color);
-    }
-
-    .topbar-contact {
-      text-align: center;
-      background-color: #1a1a1a;
-      padding: 10px;
-      font-size: 0.9em;
-    }
-
-    .topbar-contact a {
-      color: #ccc;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    .topbar-contact a:hover {
-      color: var(--accent-color);
-    }
-
-    .topbar-contact {
-    text-align: center;
-    background-color: #1a1a1a;
-    padding: 10px;
-    font-size: 0.9em;
-  }
-
-  .topbar-contact a {
-    color: #ccc;
-    margin: 0 8px;
-    text-decoration: none;
-  }
-
-  .topbar-contact a:hover {
-    color: var(--accent-color);
-  }
-
-  /* Buttons */
-  .contact-buttons {
-    margin-top: 8px;
-  }
-
-  .btn-small {
-    display: inline-block;
-    margin: 5px 6px;
-    padding: 6px 12px;
-    background: var(--accent-color);
-    color: white !important;
-    font-size: 0.85em;
-    font-weight: bold;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-  .btn-small:hover {
-    background: #0056b3; /* darker hover */
-  }
-    /* Optional: unify topbar link color */
-.topbar-contact a { color: var(--accent-color); }
-.topbar-contact a:hover { text-decoration: underline; }
-    
-  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Md Badrul Hasan</h1>
-    <h2>PhD Candidate | Mechanical Engineering | Numerical Simulations</h2>
-  </header>
 
-  <nav>
-    <div class="nav-container">
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="nav-links" id="navLinks">
-  <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News & Events</a>
-  <a href="creative.html">Creative Interests</a>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html">
+      Md Badrul Hasan
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="awards.html">Awards</a>
+      <a href="news.html">News</a>
+      <a href="service.html">Service</a>
+      <a href="creative.html">Photography</a>
+      <a class="nav__cv" href="Badrul_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="page-head__inner">
+    <h1>Photography</h1>
+    <p>Documentary and street work, mostly made in Old Dhaka and Baltimore. I served as vice president of the BUET Photographic Society and still shoot when the research allows.</p>
+  </div>
 </div>
 
-    </div>
+<div class="layout layout--doc">
+
+  <nav class="toc" data-toc aria-label="On this page">
+    <p class="toc__label">On this page</p>
   </nav>
 
-  <!-- ✅ Contact Bar with Separate Row for Buttons -->
-<div class="topbar-contact">
-  <div class="contact-links">
-    <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
-    <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
-    <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
-  </div>
-  <div class="contact-buttons">
-    <a href="Badrul_CV.pdf" target="_blank" class="btn-small">Full CV</a>
-    <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank" class="btn-small">Resume</a>
-  </div>
+  <main id="main">
+
+    <section class="section" id="photos" data-nav-label="Selected photos">
+      <h2>Selected photos</h2>
+      <p class="prose" style="color:var(--ink-dim);font-size:.92rem">Select any photo to view it larger.</p>
+      <div class="gallery">
+        <figure><img src="photo1.jpg" alt="Holi celebration in Shakhari Bazar, Old Dhaka, 2014" loading="lazy"><figcaption>Holi 2014, Shakhari Bazar</figcaption></figure>
+        <figure><img src="photo2.jpg" alt="Shakrain kite festival in Old Dhaka, 2017" loading="lazy"><figcaption>Shakrain 2017, Old Dhaka</figcaption></figure>
+        <figure><img src="photo3.jpg" alt="Hills at Sajek, Bandarban" loading="lazy"><figcaption>Sajek, Bandarban</figcaption></figure>
+        <figure><img src="photo4.jpg" alt="Street scene in downtown Baltimore" loading="lazy"><figcaption>Downtown Baltimore</figcaption></figure>
+        <figure><img src="photo5.jpg" alt="Street scene in downtown Baltimore" loading="lazy"><figcaption>Downtown Baltimore</figcaption></figure>
+        <figure><img src="photo6.jpg" alt="Halloween in Baltimore" loading="lazy"><figcaption>Halloween, Baltimore</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section" id="features" data-nav-label="Features">
+      <h2>Features</h2>
+
+      <div class="facts">
+        <div class="fact">
+          <div class="fact__meta">BUETPS</div>
+          <div>
+            <p class="fact__title"><a class="pub__title-link" href="https://www.facebook.com/buetps/posts/pfbid0fXnL9EqGdjNypGuuEPJhuCxZHpRiQ9itwiADpKagSrdR83uQNR5kHTwwd1xahh3vl" target="_blank" rel="noopener">Alumni spotlight</a></p>
+            <p class="fact__sub">The BUET Photographic Society featured me as a former vice president, with reflections on keeping a creative practice alongside research.</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <div class="fact__meta">2014</div>
+          <div>
+            <p class="fact__title"><a class="pub__title-link" href="https://www.facebook.com/photo/?fbid=741560589208771&amp;set=a.681975168500647" target="_blank" rel="noopener">Featured series, Holi</a></p>
+            <p class="fact__sub">An early frame from Holi in Shakhari Bazar, Old Dhaka, selected for the BUETPS “Featured” series on contemporary photography by BUET students.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="elsewhere" data-nav-label="Elsewhere">
+      <h2>Elsewhere</h2>
+      <ul class="contact-row">
+        <li><a href="https://www.instagram.com/badtanjil/" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        <li><a href="https://www.flickr.com/photos/badtanjil/" target="_blank" rel="noopener"><i class="fab fa-flickr" aria-hidden="true"></i> Flickr</a></li>
+      </ul>
+    </section>
+
+    <div class="next-up">
+      <p>Back to the research side of things.</p>
+      <a class="btn" href="index.html">Home</a>
+    </div>
+
+  </main>
 </div>
-  
-  <div class="container">
-    <main class="main-content">
-      <h3>Creative Interests</h3>
-      <p>
-        Beyond my academic work, I have long held a passion for photography—particularly documentary and street photography. My creative work has been featured in several showcases and social platforms, including recognition from BUETPS. Below are selected highlights and a preview of some of my past work.
-      </p>
 
-      <div class="entry">
-        <p><a href="https://www.facebook.com/buetps/posts/pfbid0fXnL9EqGdjNypGuuEPJhuCxZHpRiQ9itwiADpKagSrdR83uQNR5kHTwwd1xahh3vl" target="_blank">
-          BUETPS Alumni Spotlight</a><br>
-          Recognized by BUET Photographic Society as a notable alumni member for contributions to photography and leadership. Shared reflections on balancing creativity with research.<br>
-          Instagram: <a href="https://www.instagram.com/badtanjil/" target="_blank">@badtanjil</a> | Flickr: <a href="https://www.flickr.com/photos/badtanjil/" target="_blank">badtanjil</a>
-        </p>
-      </div>
-
-      <div class="entry">
-        <p><a href="https://www.facebook.com/photo/?fbid=741560589208771&set=a.681975168500647" target="_blank">
-          BUETPS Featured Series – Holi 2014</a><br>
-          One of my early works, this Holi photograph was taken in Shakhari Bazar, Old Dhaka in 2014. It was featured as part of BUETPS’s “FEATURED” series highlighting alumni photographers.
-        </p>
-      </div>
-
-      <h3>Selected Photos</h3>
-      <div class="photo-grid">
-        <figure><img src="photo1.jpg" alt="Holi 2014, Shakhari Bazar"><figcaption>Holi 2014, Shakhari Bazar</figcaption></figure>
-        <figure><img src="photo2.jpg" alt="Shakrain 2017, Old Dhaka"><figcaption>Shakrain 2017, Old Dhaka</figcaption></figure>
-        <figure><img src="photo3.jpg" alt="Sajek, Bandarban"><figcaption>Sajek, Bandarban</figcaption></figure>
-        <figure><img src="photo4.jpg" alt="Downtown, Baltimore"><figcaption>Downtown, Baltimore</figcaption></figure>
-        <figure><img src="photo5.jpg" alt="Downtown, Baltimore"><figcaption>Downtown, Baltimore</figcaption></figure>
-        <figure><img src="photo6.jpg" alt="Halloween, Baltimore"><figcaption>Halloween, Baltimore</figcaption></figure>
-      </div>
-    </main>
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <p>&copy; 2026 Md Badrul Hasan</p>
+    <ul class="contact-row">
+      <li><a href="mailto:mdbadrh1@umbc.edu">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-3594-2386" target="_blank" rel="noopener">ORCID</a></li>
+      <li><a href="https://linkedin.com/in/badtanjil/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
   </div>
+</footer>
 
-  <footer>
-    &copy; 2026 Md Badrul Hasan. All rights reserved.
-  </footer>
+<button class="to-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-  </script>
+<script src="site.js"></script>
 </body>
 </html>

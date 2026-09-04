@@ -1,417 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
-  <title>Home - Md Badrul Hasan</title>
-  <style>
-    :root {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --header-bg: #1e1e1e;
-      --nav-bg: #1c1c1c;
-      --card-bg: #1f1f1f;
-      --accent-color: #007bff;
-      --border-color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Badrul Hasan — Scientific machine learning for hurricane and turbulence simulation</title>
+<meta name="description" content="Md Badrul Hasan holds a PhD in Mechanical Engineering from UMBC. He builds invariance-embedded machine learning sub-grid-scale models for mesoscale hurricane boundary layer simulation in WRF.">
+<link rel="canonical" href="https://badtanjil.github.io/index.html">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta property="og:type" content="website">
+<meta property="og:title" content="Md Badrul Hasan — Machine learning for hurricane and turbulence simulation">
+<meta property="og:description" content="PhD in Mechanical Engineering from UMBC. Scientific machine learning for geophysical fluid dynamics.">
+<meta property="og:url" content="https://badtanjil.github.io/">
+<meta property="og:image" content="https://badtanjil.github.io/profile_1.jpg">
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--header-bg);
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid var(--border-color);
-    }
-
-    header h1 {
-      font-size: 2.5em;
-    }
-
-    header h2 {
-      font-size: 1.2em;
-      color: #999;
-    }
-
-    nav {
-      background: var(--nav-bg);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-      padding: 10px 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: nowrap;  /* ✅ PREVENTS WRAPPING ON DESKTOP */
-      flex: 1;             /* ✅ MAKES IT STRETCH TO FILL SPACE */
-      justify-content: center;  /* ✅ EVENLY DISTRIBUTES ITEMS */
-      overflow-x: auto;    /* ✅ ALLOWS SCROLL IF TOO MANY ITEMS */
-    }
-
-    .nav-links::-webkit-scrollbar {
-      height: 6px;
-    }
-    .nav-links::-webkit-scrollbar-thumb {
-      background: var(--accent-color);
-    }
-
-    .nav-links a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-color);
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: var(--text-color);
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .nav-links a {
-        padding: 10px 20px;
-        width: 100%;
-        border-top: 1px solid var(--border-color);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;                /* Even spacing between children */
-        justify-content: center;  /* Center container on screen */
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    /* Sidebar styling */
-    .sidebar {
-        flex: 1 1 300px;          /* Grow, shrink, minimum width */
-        max-width: 350px;
-        background: var(--card-bg);
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    /* Main content styling */
-    .main-content {
-        flex: 2 1 600px;           /* Grow more, shrink, min width */
-        max-width: 800px;
-        background: var(--card-bg);
-        padding: 30px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .sidebar img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .sidebar h3 {
-      margin-top: 15px;
-    }
-
-    .sidebar p, .sidebar a, .sidebar li {
-      font-size: 1em;
-      color: #ccc;
-      line-height: 1.5;
-    }
-
-    .sidebar .buttons a {
-      display: inline-block;
-      margin: 5px 5px 0 0;
-      padding: 6px 12px;
-      background: var(--accent-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.85em;
-    }
-
-    /* Make sidebar links the same blue (optional) */
-    .sidebar a { color: var(--accent-color); }
-    .sidebar a:hover { text-decoration: underline; }
-
-    /* Optional: unify topbar link color */
-    .topbar-contact a { color: var(--accent-color); }
-    .topbar-contact a:hover { text-decoration: underline; }
-  
-
-    .main-content h3 {
-      color: var(--text-color);
-      border-bottom: 1px solid var(--border-color);
-      margin-bottom: 15px;
-      padding-bottom: 5px;
-    }
-
-    .main-content ul, .main-content p, .main-content ol {
-      margin-bottom: 25px;
-    }
-
-    .main-content li {
-      margin-left: 20px;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8em;
-      color: #aaa;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    /* Content (body) links – match site accent blue */
-.main-content a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-.main-content a:hover,
-.main-content a:focus {
-  text-decoration: underline;
-}
-/* Optional: a softer blue for visited links */
-.main-content a:visited {
-  color: #6aa9ff; /* tweak if you prefer */
-}
- /* Sidebar publications list */
-.sidebar .pub-list {
-  margin: 10px 0 0 20px;      /* indent like your Research Interests */
-  list-style-type: disc;
-  font-size: 0.95em;          /* slightly compact */
-}
-.sidebar .pub-list li {
-  margin-bottom: 10px;
-}
-.sidebar .pub-list a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-.sidebar .pub-list a:hover {
-  text-decoration: underline;
-}
-.sidebar .more-link {
-  margin-top: 8px;
-  text-align: left;
-}
-.sidebar .more-link a {
-  font-weight: 600;
-  color: var(--accent-color);
-  text-decoration: none;
-}
-.sidebar .more-link a:hover {
-  text-decoration: underline;
-}
-
-  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Md Badrul Hasan</h1>
-  <h2>PhD Candidate | Mechanical Engineering | Numerical Simulations</h2>
-</header>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-container">
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="nav-links" id="navLinks">
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html">
+      Md Badrul Hasan
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
       <a href="index.html">Home</a>
       <a href="publications.html">Publications</a>
       <a href="awards.html">Awards</a>
-      <a href="news.html">News & Events</a>
-      <a href="creative.html">Creative Interests</a>
-    </div>
+      <a href="news.html">News</a>
+      <a href="service.html">Service</a>
+      <a href="creative.html">Photography</a>
+      <a class="nav__cv" href="Badrul_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<div class="container">
-  <aside class="sidebar">
-    <img src="profile_1.jpg" alt="Profile Photo">
-    <h3>Contact</h3>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:mdbadrh1@umbc.edu">mdbadrh1@umbc.edu</a></p>
-    <p><i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a></p>
-    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a></p>
-    <div class="buttons">
-      <a href="Badrul_CV.pdf" target="_blank">Download CV</a>
+<section class="hero">
+  <svg class="hero__flow" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g stroke-width="1" transform="translate(960 165)">
+      <ellipse rx="26"  ry="17"  opacity=".34"></ellipse>
+      <ellipse rx="64"  ry="40"  opacity=".31" transform="rotate(7)"></ellipse>
+      <ellipse rx="98"  ry="61"  opacity=".28" transform="rotate(14)"></ellipse>
+      <ellipse rx="132" ry="82"  opacity=".26" transform="rotate(21)"></ellipse>
+      <ellipse rx="166" ry="103" opacity=".23" transform="rotate(28)"></ellipse>
+      <ellipse rx="200" ry="124" opacity=".21" transform="rotate(35)"></ellipse>
+      <ellipse rx="234" ry="145" opacity=".19" transform="rotate(42)"></ellipse>
+      <ellipse rx="268" ry="166" opacity=".17" transform="rotate(49)"></ellipse>
+      <ellipse rx="302" ry="187" opacity=".15" transform="rotate(56)"></ellipse>
+      <ellipse rx="336" ry="208" opacity=".13" transform="rotate(63)"></ellipse>
+      <ellipse rx="370" ry="229" opacity=".11" transform="rotate(70)"></ellipse>
+      <ellipse rx="404" ry="250" opacity=".09" transform="rotate(77)"></ellipse>
+      <ellipse rx="438" ry="272" opacity=".07" transform="rotate(84)"></ellipse>
+      <ellipse rx="472" ry="293" opacity=".05" transform="rotate(91)"></ellipse>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <h1>Md Badrul Hasan</h1>
+    <p class="hero__role">PhD in Mechanical Engineering, University of Maryland, Baltimore County</p>
+    <p class="hero__where">I build machine learning turbulence closures that respect physical invariance, and run them inside WRF to simulate hurricane boundary layers.</p>
+
+    <div class="hero__actions">
+      <a class="btn btn--accent" href="Badrul_CV.pdf" target="_blank" rel="noopener"><i class="fas fa-file-lines" aria-hidden="true"></i> Full CV</a>
+      <a class="btn" href="Md_Badrul_Hasan_Resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Resume</a>
     </div>
-    <div class="buttons">
-      <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank">Download Resume</a>
-    </div>
-    <h3>Research Interests</h3>
-    <ul style="padding-left: 20px; list-style-type: disc;">
+
+    <ul class="contact-row" style="margin-top:22px">
+      <li><a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope" aria-hidden="true"></i> mdbadrh1@umbc.edu</a></li>
+      <li><a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-3594-2386" target="_blank" rel="noopener"><i class="ai ai-orcid" aria-hidden="true"></i> ORCID</a></li>
+      <li><a href="https://linkedin.com/in/badtanjil/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="layout layout--home">
+
+  <aside class="rail" aria-label="Profile">
+    <img class="rail__photo" src="profile_1.jpg" alt="Md Badrul Hasan" width="600" height="600">
+
+    <h2>Research interests</h2>
+    <ul>
       <li>Machine learning for geophysical fluid dynamics</li>
       <li>Sub-grid scale modeling and turbulence closures</li>
-      <li>Mesoscale hurricane boundary layer simulations</li>
+      <li>Mesoscale hurricane boundary layer simulation</li>
       <li>Physics-informed and structure-preserving neural networks</li>
-      <li>Numerical weather prediction and WRF model development</li>
-      <li>Hurricane hazard modeling and environmental risk analysis</li>
-      <li>Cyber-physical security and anomaly detection in wind energy systems</li>
+      <li>Numerical weather prediction and WRF development</li>
+      <li>Hurricane hazard modeling and environmental risk</li>
+      <li>Cyber-physical security in wind energy systems</li>
     </ul>
-    <h3>Selected Publications</h3>
-    <ul class="pub-list">
-      <li> Hasan, M. B., Guimond, S. R., Yu, M., Reddy, S., &amp; Giraldo, F. X. (2022). The Effects of Numerical Dissipation on Hurricane Rapid Intensification with Observational Heating.
-      <i>J. Adv. Model. Earth Syst.</i>
-      [<a href="https://doi.org/10.1029/2021MS002897" target="_blank">DOI</a>]
-      </li>
-      <li>
-      Hasan, M. B., Yu, M., &amp; Oates, T. (2025).
-      Comparison of Several ML-Enhanced Sub-grid Scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation.
-      <i>AIAA SciTech 2025</i>
-      [<a href="https://doi.org/10.2514/6.2025-2212" target="_blank">DOI</a>]
-      </li>
-      <li>
-      Hasan, M. B., Yu, M., &amp; Oates, T. (2025).
-      Invariance-embedded ML Sub-grid-scale Stress Models I: Model Development and <i>a priori</i> Studies.
-      (Under Review)
-      [<a href="https://arxiv.org/abs/2504.14473" target="_blank">arXiv</a>]
-      </li>
-    </ul>
-    <p class="more-link">
-    <a href="publications.html">All publications →</a>
-    </p>
   </aside>
 
-  <main class="main-content">
-    <h3>About Me</h3>
-    <p>
-    I am a PhD candidate in Mechanical Engineering at the University of Maryland, Baltimore County, where I work on scientific machine learning for geophysical fluid dynamics. My research focuses on developing invariance-embedded sub-grid-scale models for mesoscale hurricane boundary layer simulations and implementing them within the Weather Research and Forecasting (WRF) model for <i>a priori</i> and <i>a posteriori</i> evaluation.  I also work with radar and remote sensing datasets, high-performance GPU computing, and physics-informed neural network methods for environmental systems. My broader interests include hurricane hazard modeling, climate resilience, and the integration of machine learning with large-scale numerical prediction systems.
-    </p>
-    <h3>Education</h3>
-    <ul>
-    <li>
-      <b>University of Maryland, Baltimore County (UMBC)</b><br>
-      Ph.D. in Mechanical Engineering<br>
-      2022 – Present
-    </li>
-    <li>
-      <b>University of Maryland, Baltimore County (UMBC)</b><br>
-      M.S. in Mechanical Engineering<br>
-      2019 – 2022
-    </li>
-    <li>
-      <b>Bangladesh University of Engineering and Technology (BUET)</b><br>
-      B.Sc. in Mechanical Engineering<br>
-      2013 – 2017
-    </li>
-    </ul>
+  <main id="main">
 
-    <h3>Work Experience</h3>
-    <ul>
-      <li><b>Computational Mechanics Laboratory, UMBC</b> — Graduate Research Assistant (January 2022 – Present)
-        <ul>
-          <li>
-          Conducting <i>posteriori</i> tests of invariance-embedded machine learning models for meso-scale hurricane boundary layer flows, integrating ML closures into WRF for in-line hurricane simulations.
-          (<a href="https://coeit.umbc.edu/cip-awards/" target="_blank"><b>UMBC 2025 COEIT Interdisciplinary Proposal Award</b></a>)
-          </li>
-          <li>
-          Developing machine-learning-based models of backscatter-admitting sub-grid-scale (SGS) processes to improve hurricane boundary layer simulations.
-          </li>
-          <li>
-          Advancing methods for detecting stealthy, long-term cyber-attacks on wind energy assets using physics-informed neural networks.
-          (<a href="https://umbc.edu/quick-posts/2024-exploratory-grant-recipients/" target="_blank"><b>UMBC 2024 Cybersecurity Leadership Exploratory Grant</b></a>)
-          </li>
-        </ul>
-      </li>
+    <section class="section panel" id="about">
+      <h2>About</h2>
+      <div class="prose">
+        <p>My research advances scientific machine learning for multi-physics simulation, combining physics-constrained neural networks with data-driven sub-grid-scale closure modeling to capture spatiotemporal atmospheric boundary layer dynamics. I develop invariance-embedded machine learning surrogates and integrate them into large-scale CFD solvers such as WRF, using high-performance computing to run high-fidelity hurricane boundary layer simulations at scale.</p>
+        <p>I completed my PhD in Mechanical Engineering at the University of Maryland, Baltimore County in June 2026, advised by Dr. Meilin Yu. My dissertation covered model development, <i>a priori</i> assessment, and <i>a posteriori</i> tests of these closures inside WRF.</p>
+        <p>I also work with radar and remote sensing datasets, high-performance GPU computing, and physics-informed neural networks for environmental systems. My broader interests include hurricane hazard modeling, climate resilience, and integrating machine learning with large-scale numerical prediction systems.</p>
+      </div>
+    </section>
 
-      <li><b>Joint Centre for Earth Systems Technology (JCET), UMBC</b> — Graduate Research Assistant (January 2020 – June 2022)
-        <ul>
-          <li>Investigated numerical dissipation in WRF and NUMA models with support from NSF grant AGS-2121366.</li>
-          <li>Analyzed IWRAP remote sensing radar data under the guidance of Dr. Stephen Guimond for NOAA/AOML/HRD Hurricane Field Program.</li>
-        </ul>
-      </li>
+    <section class="section panel" id="selected">
+      <h2>Selected publications</h2>
 
-      <li><b>University of Maryland, Baltimore County (UMBC)</b> — Graduate Teaching Assistant (January 2019 – May 2024)
-        <ul>
-          <li>Conducted the lab demonstrations and grading for ENME-432L, Fluids/Energy Lab with Dr. Meilin Yu.</li>
-          <li>Assisted Dr. James Baughan with teaching and grading for ENME-423, HVAC Design.</li>
-        </ul>
-      </li>
-    </ul>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub__year">2026</div>
+          <div>
+            <p class="pub__title">Invariance-embedded machine learning sub-grid-scale stress models for mesoscale hurricane boundary layer flow simulation I: model development and <i>a priori</i> studies</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">International Journal for Numerical Methods in Fluids</p>
+            <p class="pub__foot">
+              <span class="pill">Accepted</span>
+              <a class="pub__link" href="https://arxiv.org/abs/2504.14473" target="_blank" rel="noopener">arXiv</a>
+            </p>
+          </div>
+        </li>
 
-   <h3>Technical Strengths</h3>
-    <ul>
-    <li><b>Programming Languages:</b> Python, MATLAB, Fortran</li>
-    <li><b>Scientific Machine Learning:</b> PINNs, neural operators, neural ODEs</li>
-    <li><b>Deep Learning:</b> PyTorch, CUDA</li>
-    <li><b>CFD and PDE Models:</b> WRF, NUMA, OpenFAST, COMSOL</li>
-    <li><b>High-Performance Computing:</b> Slurm, OpenMPI, GPU clusters</li>
-    <li><b>Modeling and Analysis:</b> SolidWorks, AutoCAD</li>
-    <li><b>Tools:</b> LaTeX, Git/GitHub</li>
-    </ul>
+        <li class="pub">
+          <div class="pub__year">2025</div>
+          <div>
+            <p class="pub__title">Comparison of several machine-learning-enhanced sub-grid scale stress models for mesoscale hurricane boundary layer flow simulation</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">AIAA SciTech 2025 Forum, p. 2212</p>
+            <p class="pub__foot">
+              <span class="pill">Best student paper</span>
+              <a class="pub__link" href="https://doi.org/10.2514/6.2025-2212" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub__year">2022</div>
+          <div>
+            <p class="pub__title">The effects of numerical dissipation on hurricane rapid intensification with observational heating</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Guimond, S. R., Yu, M., Reddy, S., &amp; Giraldo, F. X.</p>
+            <p class="pub__venue">Journal of Advances in Modeling Earth Systems, 14, e2021MS002897</p>
+            <p class="pub__foot">
+              <a class="pub__link" href="https://doi.org/10.1029/2021MS002897" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+
+      </ol>
+
+      <p style="margin:22px 0 0"><a class="btn" href="publications.html">See all publications</a></p>
+    </section>
+
+    <section class="section panel" id="education">
+      <h2>Education</h2>
+      <div class="facts">
+        <div class="fact">
+          <div class="fact__meta">2022 – 2026</div>
+          <div>
+            <p class="fact__title">PhD, Mechanical Engineering</p>
+            <p class="fact__sub">University of Maryland, Baltimore County. Advisor: Dr. Meilin Yu.</p>
+          </div>
+        </div>
+        <div class="fact">
+          <div class="fact__meta">2019 – 2022</div>
+          <div>
+            <p class="fact__title">MS, Mechanical Engineering</p>
+            <p class="fact__sub">University of Maryland, Baltimore County. Advisors: Dr. Meilin Yu, Dr. Stephen Guimond.</p>
+          </div>
+        </div>
+        <div class="fact">
+          <div class="fact__meta">2013 – 2017</div>
+          <div>
+            <p class="fact__title">BSc, Mechanical Engineering</p>
+            <p class="fact__sub">Bangladesh University of Engineering and Technology</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel" id="experience">
+      <h2>Experience</h2>
+      <div class="facts">
+
+        <div class="fact">
+          <div class="fact__meta">Jan 2022 – Aug 2026</div>
+          <div>
+            <p class="fact__title">Graduate Research Assistant</p>
+            <p class="fact__sub">Computational Mechanics Laboratory, UMBC</p>
+            <ul class="fact__notes">
+              <li>Conducted <i>a priori</i> and <i>a posteriori</i> evaluations of invariance-embedded machine learning sub-grid-scale closures for rotating hurricane boundary layers, integrating spatio-temporal stress and eddy-viscosity surrogates into WRF. Project supported by the <a href="https://coeit.umbc.edu/cip-awards/" target="_blank" rel="noopener">UMBC 2025 COEIT Interdisciplinary Proposal Award</a>.</li>
+              <li>Developed machine-learning models of backscatter-admitting sub-grid-scale processes to improve hurricane boundary layer simulation.</li>
+              <li>Advanced methods for detecting stealthy, long-term cyber-attacks on wind energy assets using physics-informed neural networks. Project supported by the <a href="https://umbc.edu/quick-posts/2024-exploratory-grant-recipients/" target="_blank" rel="noopener">UMBC 2024 Cybersecurity Leadership Exploratory Grant</a>.</li>
+              <li>Contributed to the development of next-generation naval design tools using CFDship-Iowa, with industrial and academic partners.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fact">
+          <div class="fact__meta">Jan 2020 – Jun 2022</div>
+          <div>
+            <p class="fact__title">Graduate Research Assistant</p>
+            <p class="fact__sub">Joint Center for Earth Systems Technology, UMBC</p>
+            <ul class="fact__notes">
+              <li>Investigated numerical dissipation across weather prediction models (WRF and NUMA) with Dr. Stephen Guimond, supported by NSF grant AGS-2121366.</li>
+              <li>Analyzed remote-sensing radar observations from the Imaging Wind and Rain Airborne Profiler (IWRAP) for the NOAA/AOML/HRD Hurricane Field Program.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fact">
+          <div class="fact__meta">Jan 2019 – May 2024</div>
+          <div>
+            <p class="fact__title">Graduate Teaching Assistant</p>
+            <p class="fact__sub">University of Maryland, Baltimore County</p>
+            <ul class="fact__notes">
+              <li>Ran lab demonstrations and grading for ENME 432L, Fluids and Energy Lab, with Dr. Meilin Yu.</li>
+              <li>Supported Dr. James Baughan with teaching and grading for ENME 423, HVAC Design.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section panel" id="skills">
+      <h2>Technical strengths</h2>
+      <div class="facts">
+        <div class="fact skill-row">
+          <div class="fact__meta">Turbulence and SGS modeling</div>
+          <ul class="tags"><li>SGS closures</li><li>Eddy-viscosity models</li><li>Rotating boundary layers</li></ul>
+        </div>
+        <div class="fact skill-row">
+          <div class="fact__meta">Programming</div>
+          <ul class="tags"><li>Python</li><li>NumPy</li><li>xarray</li><li>MATLAB</li><li>Fortran</li><li>Bash</li></ul>
+        </div>
+        <div class="fact skill-row">
+          <div class="fact__meta">Scientific ML</div>
+          <ul class="tags"><li>PINNs</li><li>Neural operators</li><li>Neural ODEs</li><li>Physics-constrained surrogates</li><li>Spatio-temporal modeling</li></ul>
+        </div>
+        <div class="fact skill-row">
+          <div class="fact__meta">Deep learning</div>
+          <ul class="tags"><li>PyTorch</li><li>CUDA</li></ul>
+        </div>
+        <div class="fact skill-row">
+          <div class="fact__meta">CFD and PDE models</div>
+          <ul class="tags"><li>WRF</li><li>NUMA</li><li>ANSYS Fluent</li><li>COMSOL</li><li>OpenFAST</li><li>CFDship-Iowa</li></ul>
+        </div>
+        <div class="fact skill-row">
+          <div class="fact__meta">High-performance computing</div>
+          <ul class="tags"><li>Slurm</li><li>OpenMPI</li><li>GPU clusters</li></ul>
+        </div>
+        <div class="fact skill-row">
+          <div class="fact__meta">Modeling and analysis</div>
+          <ul class="tags"><li>SolidWorks</li><li>AutoCAD</li></ul>
+        </div>
+        <div class="fact skill-row">
+          <div class="fact__meta">Tools</div>
+          <ul class="tags"><li>LaTeX</li><li>Git</li><li>GitHub</li></ul>
+        </div>
+      </div>
+    </section>
 
   </main>
 </div>
 
-<footer>
-  &copy; 2026 Md Badrul Hasan. All rights reserved.
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <p>&copy; 2026 Md Badrul Hasan</p>
+    <ul class="contact-row">
+      <li><a href="mailto:mdbadrh1@umbc.edu">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-3594-2386" target="_blank" rel="noopener">ORCID</a></li>
+      <li><a href="https://linkedin.com/in/badtanjil/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-  }
-</script>
+<button class="to-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 
+<script src="site.js"></script>
 </body>
 </html>

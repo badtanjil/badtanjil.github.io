@@ -1,294 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
-  <title>Publications - Md Badrul Hasan</title>
-  <style>
-    :root {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --header-bg: #1e1e1e;
-      --nav-bg: #1c1c1c;
-      --card-bg: #1f1f1f;
-      --accent-color: #007bff;
-      --border-color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Md Badrul Hasan</title>
+<meta name="description" content="Journal articles, conference papers and talks by Md Badrul Hasan on machine learning sub-grid-scale modeling, hurricane boundary layer simulation and wind energy cybersecurity.">
+<link rel="canonical" href="https://badtanjil.github.io/publications.html">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--header-bg);
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid var(--border-color);
-    }
-    header h1 { font-size: 2.5em; }
-    header h2 { font-size: 1.2em; color: #999; }
-
-    /* NAV (matches index.html) */
-    nav { background: var(--nav-bg); border-bottom: 1px solid var(--border-color); }
-    .nav-container {
-      display: flex; justify-content: space-between; align-items: center;
-      max-width: 1200px; margin: auto; padding: 10px 20px;
-    }
-    .nav-links {
-      display: flex; gap: 20px; flex-wrap: nowrap; flex: 1;
-      justify-content: center; overflow-x: auto;
-    }
-    .nav-links::-webkit-scrollbar { height: 6px; }
-    .nav-links::-webkit-scrollbar-thumb { background: var(--accent-color); }
-    .nav-links a {
-      color: var(--text-color); text-decoration: none; font-weight: bold; padding: 8px;
-    }
-    .nav-links a:hover { color: var(--accent-color); }
-
-    .menu-toggle { display: none; flex-direction: column; cursor: pointer; margin-left: 10px; }
-    .menu-toggle span {
-      height: 3px; width: 25px; background: var(--text-color); margin: 4px 0; transition: 0.4s;
-    }
-
-    @media (max-width: 768px) {
-      .nav-container { flex-direction: column; align-items: flex-start; }
-      .nav-links { display: none; flex-direction: column; width: 100%; }
-      .nav-links a { padding: 10px 20px; width: 100%; border-top: 1px solid var(--border-color); }
-      .nav-links.active { display: flex; }
-      .menu-toggle { display: flex; }
-    }
-
-    /* PAGE LAYOUT (centered card like index main-content) */
-    .container {
-      max-width: 1200px; margin: 0 auto; padding: 20px;
-      display: flex; justify-content: center;
-    }
-    .main-content {
-      flex: 1 1 800px; max-width: 900px;
-      background: var(--card-bg); padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    .main-content h3 {
-      color: var(--text-color);
-      border-bottom: 1px solid var(--border-color);
-      margin-bottom: 15px; padding-bottom: 5px;
-    }
-    .main-content ol, .main-content ul, .main-content p { margin-bottom: 20px; }
-    .main-content li { margin-left: 20px; }
-    .main-content a { color: var(--accent-color); text-decoration: none; }
-    .main-content a:hover { text-decoration: underline; }
-
-    footer {
-      text-align: center; font-size: 0.8em; color: #aaa;
-      padding: 20px; margin-top: 40px; border-top: 1px solid var(--border-color);
-    }
-
-    .topbar-contact {
-  text-align: center;
-  background-color: #1a1a1a;
-  padding: 10px;
-  font-size: 0.9em;
-}
-
-.topbar-contact a {
-  color: #ccc;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-.topbar-contact a:hover {
-  color: var(--accent-color);
-}
-
-.topbar-contact {
-    text-align: center;
-    background-color: #1a1a1a;
-    padding: 10px;
-    font-size: 0.9em;
-  }
-
-  .topbar-contact a {
-    color: #ccc;
-    margin: 0 8px;
-    text-decoration: none;
-  }
-
-  .topbar-contact a:hover {
-    color: var(--accent-color);
-  }
-
-  /* Buttons */
-  .contact-buttons {
-    margin-top: 8px;
-  }
-
-  .btn-small {
-    display: inline-block;
-    margin: 5px 6px;
-    padding: 6px 12px;
-    background: var(--accent-color);
-    color: white !important;
-    font-size: 0.85em;
-    font-weight: bold;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-  .btn-small:hover {
-    background: #0056b3; /* darker hover */
-  }
-
-    /* Optional: unify topbar link color */
-.topbar-contact a { color: var(--accent-color); }
-.topbar-contact a:hover { text-decoration: underline; }
-
-    /* Content (body) links – match site accent blue */
-.main-content a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-.main-content a:hover,
-.main-content a:focus {
-  text-decoration: underline;
-}
-/* Optional: a softer blue for visited links */
-.main-content a:visited {
-  color: #6aa9ff; /* tweak if you prefer */
-}
-
-    
-  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Md Badrul Hasan</h1>
-  <h2>PhD Candidate | Mechanical Engineering | Numerical Simulations</h2>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html">
+      Md Badrul Hasan
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="awards.html">Awards</a>
+      <a href="news.html">News</a>
+      <a href="service.html">Service</a>
+      <a href="creative.html">Photography</a>
+      <a class="nav__cv" href="Badrul_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
 </header>
 
-<nav>
-  <div class="nav-container">
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+<div class="page-head">
+  <div class="page-head__inner">
+    <h1>Publications</h1>
+    <p>Peer-reviewed articles, conference papers and invited talks. Full records are also on <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0002-3594-2386" target="_blank" rel="noopener">ORCID</a>.</p>
+  </div>
+</div>
+
+<div class="layout layout--doc">
+
+  <nav class="toc" data-toc data-mobile="off" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+  </nav>
+
+  <main id="main">
+
+    <div class="filters" data-filters>
+      <button class="chip" type="button" data-kind="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-kind="journal" aria-pressed="false">Journal</button>
+      <button class="chip" type="button" data-kind="conference" aria-pressed="false">Conference</button>
+      <button class="chip" type="button" data-kind="talk" aria-pressed="false">Talks</button>
+      <span class="filters__count" data-count aria-live="polite"></span>
     </div>
-    <div class="nav-links" id="navLinks">
-  <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News & Events</a>
-  <a href="creative.html">Creative Interests</a>
-</div>
 
-  </div>
-</nav>
+    <section class="section" id="journal" data-kind="journal" data-nav-label="Journal articles">
+      <h2>Journal articles</h2>
+      <ol class="pubs">
+        <li class="pub" data-kind="journal">
+          <div class="pub__year">2026</div>
+          <div>
+            <p class="pub__title">Invariance-embedded machine learning sub-grid-scale stress models for mesoscale hurricane boundary layer flow simulation I: model development and <i>a priori</i> studies</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">International Journal for Numerical Methods in Fluids</p>
+            <p class="pub__foot">
+              <span class="pill">Accepted</span>
+              <a class="pub__link" href="https://arxiv.org/abs/2504.14473" target="_blank" rel="noopener">arXiv</a>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="journal">
+          <div class="pub__year">2026</div>
+          <div>
+            <p class="pub__title">Invariance-embedded machine learning sub-grid-scale stress models for mesoscale hurricane boundary layer flow simulation: <i>a posteriori</i> integration and evaluation</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">Journal article</p>
+            <p class="pub__foot">
+              <span class="pill pill--review">In preparation</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="journal">
+          <div class="pub__year">2026</div>
+          <div>
+            <p class="pub__title">Detecting stealthy cyber attacks on wind energy assets with ODE physics-informed learning and adversarial hardening</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Kalwani, S., Chen, Z., &amp; Yu, M.</p>
+            <p class="pub__venue">Journal article</p>
+            <p class="pub__foot">
+              <span class="pill pill--review">In preparation</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="journal">
+          <div class="pub__year">2022</div>
+          <div>
+            <p class="pub__title">The effects of numerical dissipation on hurricane rapid intensification with observational heating</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Guimond, S. R., Yu, M., Reddy, S., &amp; Giraldo, F. X.</p>
+            <p class="pub__venue">Journal of Advances in Modeling Earth Systems, 14, e2021MS002897</p>
+            <p class="pub__foot">
+              <a class="pub__link" href="https://doi.org/10.1029/2021MS002897" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
+    <section class="section" id="conference" data-kind="conference" data-nav-label="Conference papers">
+      <h2>Conference papers</h2>
+      <ol class="pubs">
+        <li class="pub" data-kind="conference">
+          <div class="pub__year">2026</div>
+          <div>
+            <p class="pub__title">Semi-<i>a priori</i> evaluation of backscatter-admitting machine learning sub-grid scale models in WRF hurricane simulations</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">AIAA Aviation 2026 Forum, AIAA 2026-4769. Presented in San Diego, CA.</p>
+            <p class="pub__foot">
+              <a class="pub__link" href="https://doi.org/10.2514/6.2026-4769" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="conference">
+          <div class="pub__year">2026</div>
+          <div>
+            <p class="pub__title">A baseline <i>a posteriori</i> evaluation of machine-learning-predicted eddy viscosity fields in mesoscale hurricane boundary layer simulations</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">ASME 2026 Fluids Engineering Division Summer Meeting. Presented in Bellevue, WA.</p>
+          </div>
+        </li>
+        <li class="pub" data-kind="conference">
+          <div class="pub__year">2025</div>
+          <div>
+            <p class="pub__title">Physics-informed machine learning for detecting stealthy long-term cyber attacks on wind energy systems</p>
+            <p class="pub__authors">Kalwani, S., <span class="me">Hasan, M. B.</span>, Chen, Z., &amp; Yu, M.</p>
+            <p class="pub__venue">2025 IEEE International Conference on Big Data, Macau, China, pp. 6587–6596</p>
+            <p class="pub__foot">
+              <a class="pub__link" href="https://doi.org/10.1109/BigData66926.2025.11401718" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="conference">
+          <div class="pub__year">2025</div>
+          <div>
+            <p class="pub__title">Evaluating machine learning-enhanced sub-grid scale stress models with invariance embedding for mesoscale hurricane boundary layer flows</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">Proceedings of the ASME 2025 Fluids Engineering Division Summer Meeting, V001T01A001. Presented in Philadelphia, PA.</p>
+            <p class="pub__foot">
+              <a class="pub__link" href="https://doi.org/10.1115/FEDSM2025-155524" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="conference">
+          <div class="pub__year">2025</div>
+          <div>
+            <p class="pub__title">Comparison of several machine-learning-enhanced sub-grid scale stress models for mesoscale hurricane boundary layer flow simulation</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Oates, T.</p>
+            <p class="pub__venue">AIAA SciTech 2025 Forum, p. 2212. Presented in Orlando, FL.</p>
+            <p class="pub__foot">
+              <span class="pill">Best student paper, AIAA FDTC</span>
+              <a class="pub__link" href="https://doi.org/10.2514/6.2025-2212" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="conference">
+          <div class="pub__year">2023</div>
+          <div>
+            <p class="pub__title">Sub-grid scale modeling of mesoscale hurricane boundary layer flows using machine learning</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span>, Yu, M., &amp; Xiao, H.</p>
+            <p class="pub__venue">AIAA SciTech 2023 Forum, p. 2487. Presented in National Harbor, MD.</p>
+            <p class="pub__foot">
+              <a class="pub__link" href="https://doi.org/10.2514/6.2023-2487" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-  <!-- ✅ Contact Bar with Separate Row for Buttons -->
-<div class="topbar-contact">
-  <div class="contact-links">
-    <a href="mailto:mdbadrh1@umbc.edu"><i class="fas fa-envelope"></i> mdbadrh1@umbc.edu</a> |
-    <a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank">Google Scholar</a> |
-    <a href="https://linkedin.com/in/badtanjil/" target="_blank">LinkedIn</a>
-  </div>
-  <div class="contact-buttons">
-    <a href="Badrul_CV.pdf" target="_blank" class="btn-small">Full CV</a>
-    <a href="Md_Badrul_Hasan_Resume.pdf" target="_blank" class="btn-small">Resume</a>
-  </div>
-</div>
-  
-<div class="container">
-  <main class="main-content">
-    <h3>Journal Publications</h3>
-    <ol>
-      <li>
-        <b>Hasan, M. B.</b>, Guimond, S. R., Yu, M., Reddy, S., &amp; Giraldo, F. X. (2022).
-        The Effects of Numerical Dissipation on Hurricane Rapid Intensification with Observational Heating.
-        <i>Journal of Advances in Modeling Earth Systems</i>, 14, e2021MS002897.
-        [<a href="https://doi.org/10.1029/2021MS002897" target="_blank">link</a>]
-      </li>
-      <li>
-        <b>Hasan, M. B.</b>, Yu, M., and Oates, T. (2025).
-        Invariance-embedded Machine Learning Sub-grid-scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation I:
-        Model Development and <i>a priori</i> Studies. Under Review.
-        [<a href="https://arxiv.org/abs/2504.14473" target="_blank">link</a>]
-      </li>
-    </ol>
+    <section class="section" id="talks" data-kind="talk" data-nav-label="Talks and posters">
+      <h2>Talks and posters</h2>
+      <ol class="pubs">
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">May 2026</div>
+          <div>
+            <p class="pub__title">Machine learning-enhanced turbulence modeling for hurricane boundary layer simulations</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">COEIT Research Day, UMBC, Baltimore, MD</p>
+            <p class="pub__foot">
+              <span class="pill">Poster</span>
+              <span class="pill">Doctoral Student Award</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">May 2026</div>
+          <div>
+            <p class="pub__title">Data-driven modeling of dynamic stall in vertical-axis wind turbines</p>
+            <p class="pub__authors">Schroeder, R., <span class="me">Hasan, M. B.</span>, &amp; Yu, M.</p>
+            <p class="pub__venue">COEIT Research Day, UMBC, Baltimore, MD</p>
+            <p class="pub__foot">
+              <span class="pill">Poster</span>
+              <span class="pill">Undergraduate Student Award</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">Feb 2026</div>
+          <div>
+            <p class="pub__title"><a class="pub__title-link" href="https://my3.my.umbc.edu/groups/me/events/151024" target="_blank" rel="noopener">Physics-informed machine learning for turbulence, hurricanes, and wind-energy cybersecurity</a></p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">Mechanical Engineering Graduate Seminar, UMBC</p>
+            <p class="pub__foot">
+              <span class="pill">Oral</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">May 2025</div>
+          <div>
+            <p class="pub__title"><a class="pub__title-link" href="https://engineering.jhu.edu/ceafm/annual-symposia/" target="_blank" rel="noopener">Invariance-embedded machine learning sub-grid-scale stress models for mesoscale hurricane boundary layer simulations</a></p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">Research Symposium on Environmental and Applied Fluid Dynamics, The George Washington University, Washington, DC</p>
+            <p class="pub__foot">
+              <span class="pill">Oral</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">Apr 2025</div>
+          <div>
+            <p class="pub__title">Stealthy long-term cyber attacks detection on wind turbines using physics-informed neural networks</p>
+            <p class="pub__authors">Kalwani, S., <span class="me">Hasan, M. B.</span>, Chen, Z., &amp; Yu, M.</p>
+            <p class="pub__venue">COEIT Research Day, UMBC, Baltimore, MD</p>
+            <p class="pub__foot">
+              <span class="pill">Poster</span>
+              <span class="pill">Honorable Mention, Master's Student Award</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">Apr 2025</div>
+          <div>
+            <p class="pub__title">Assessment of invariance-embedded machine learning models for sub-grid scale stress in mesoscale hurricane boundary layer flows</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">COEIT Research Day, UMBC, Baltimore, MD</p>
+            <p class="pub__foot">
+              <span class="pill">Oral</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">Apr 2024</div>
+          <div>
+            <p class="pub__title">Sub-grid scale modeling of mesoscale hurricane boundary layer flows using machine learning</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">COEIT Research Day, UMBC, Baltimore, MD</p>
+            <p class="pub__foot">
+              <span class="pill">Oral</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">Dec 2021</div>
+          <div>
+            <p class="pub__title">The effects of numerical dissipation on hurricane rapid intensification with observational heating</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">AGU Fall Meeting, New Orleans, LA</p>
+            <p class="pub__foot">
+              <span class="pill">Poster</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">Dec 2020</div>
+          <div>
+            <p class="pub__title">The effects of numerical dissipation on simulating hurricane intensification in a realistic regime</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">AGU Fall Meeting, San Francisco, CA</p>
+            <p class="pub__foot">
+              <span class="pill">Poster</span>
+            </p>
+          </div>
+        </li>
+        <li class="pub" data-kind="talk">
+          <div class="pub__year">Nov 2020</div>
+          <div>
+            <p class="pub__title">The effects of numerical dissipation on simulating hurricane intensification in a realistic regime</p>
+            <p class="pub__authors"><span class="me">Hasan, M. B.</span></p>
+            <p class="pub__venue">Seminar Series, Department of Mechanical Engineering, UMBC, Baltimore, MD</p>
+            <p class="pub__foot">
+              <span class="pill">Oral</span>
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-    <h3>Conference Proceedings</h3>
-    <ol>
-      <li>
-        <b>Hasan, M. B.</b>, Yu, M., &amp; Xiao, H. (2023).
-        Sub-grid Scale Modeling of Meso-scale Hurricane Boundary Layer Flows using Machine Learning.
-        In <i>AIAA SCITECH 2023 Forum</i> (p. 2487).
-        [<a href="https://doi.org/10.2514/6.2023-2487" target="_blank">link</a>]
-      </li>
-      <li>
-        <b>Hasan, M. B.</b>, Yu, M., &amp; Oates, T. (2025).
-        Comparison of Several Machine-Learning-Enhanced Sub-grid Scale Stress Models for Meso-scale Hurricane Boundary Layer Flow Simulation.
-        In <i>AIAA SCITECH 2025 Forum</i> (p. 2212).
-        [<a href="https://doi.org/10.2514/6.2025-2212" target="_blank">link</a>]
-      </li>
-      <li>
-        <b>Hasan, M. B.</b>, Yu, M., &amp; Oates, T. (2025).
-        Evaluating Machine Learning-Enhanced Sub-Grid Scale Stress Models With Invariance Embedding for Meso-Scale Hurricane Boundary Layer Flows.
-        In <i>ASME 2025 Fluids Engineering Division Summer Meeting (FEDSM).</i>
-        [<a href="https://doi.org/10.1115/FEDSM2025-155524" target="_blank">link</a>]
-      </li>
-      <li>
-        Kalwani, S., <b>Hasan, M. B.</b>, Chen, Z., &amp; Yu, M. (2025).
-        Physics-Informed Machine Learning for Detecting Stealthy Long-Term Cyber Attacks on Wind Energy Systems.
-        In <i>2025 IEEE International Conference on Big Data (BigData), Macau, China.</i> 
-        [<a href="https://doi.org/10.1109/BigData66926.2025.11401718" target="_blank">link</a>]
-      </li>
-       <li>
-        <b>Hasan, M. B.</b>, Yu, M., &amp; Oates, T. (2026).
-        Semi-A Priori Evaluation of Backscatter-Admitting Machine Learning Sub-Grid Scale Models in WRF Hurricane Simulations.
-        In <i>AIAA Aviation 2026 Forum. (Under Review)</i>
-      </li>
-       <li>
-        <b>Hasan, M. B.</b>, Yu, M., &amp; Oates, T. (2026).
-        A Baseline A Posteriori Evaluation of Machine-Learning-Predicted Eddy Viscosity Fields in Mesoscale Hurricane Boundary Layer Simulations.
-        In <i>ASME 2026 Fluids Engineering Division Summer Meeting (FEDSM). (Under Review)</i>
-      </li>
-    </ol>
+    <div class="next-up">
+      <p>Recognition for this work is listed on the awards page.</p>
+      <a class="btn" href="awards.html">Awards</a>
+    </div>
 
-    <h3>Presentations</h3>
-    <ul>
-      <li>
-        <a href="https://my3.my.umbc.edu/groups/me/events/151024">
-          Physics-Informed Machine Learning for Turbulence, Hurricanes, and Wind-Energy Cybersecurity
-        </a>- Mechanical Engineering Graduate Seminar, University of Maryland, Baltimore County (UMBC), February 2026.
-      </li>
-      <li>
-        <a href="https://engineering.jhu.edu/ceafm/annual-symposia/" target="_blank">
-          Invariance-Embedded Machine Learning Sub-Grid-Scale Stress Models for Meso-Scale Hurricane Boundary Layer Simulations
-        </a>- 2025 Research Symposium on Environmental and Applied Fluid Dynamics, The George Washington University
-      </li>
-      <li>Assessment of Invariance-Embedded ML Models for Sub-Grid Scale Stress, COEIT Research Day Talks 2025</li>
-      <li>Sub-grid Scale Modeling Using ML, COEIT Research Day 2024 (Talk &amp; Poster)</li>
-      <li>Poster Presentations at AGU Fall Meetings 2020 &amp; 2021</li>
-      <li>UMBC JCET GRA Seminar Series 2020 &amp; 2021</li>
-      <li>GRA Seminar Series – UMBC Mechanical Engineering (2020)</li>
-    </ul>
   </main>
 </div>
 
-<footer>
-  &copy; 2026 Md Badrul Hasan. All rights reserved.
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <p>&copy; 2026 Md Badrul Hasan</p>
+    <ul class="contact-row">
+      <li><a href="mailto:mdbadrh1@umbc.edu">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=D5VLIqMAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-3594-2386" target="_blank" rel="noopener">ORCID</a></li>
+      <li><a href="https://linkedin.com/in/badtanjil/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
 </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-  }
-</script>
+<button class="to-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 
+<script src="site.js"></script>
 </body>
 </html>
