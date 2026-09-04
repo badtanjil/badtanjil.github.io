@@ -425,9 +425,21 @@ a { color: var(--accent-text); }
 /* --------------------------------------------------------------------------
    8. Profile rail (home)
    -------------------------------------------------------------------------- */
-/* Stick only when the viewport is tall enough to show the whole rail */
-@media (min-width: 941px) and (min-height: 820px) {
-  .rail { position: sticky; top: calc(var(--bar-h) + 20px); }
+/* Sticks on desktop regardless of window height. On short windows the rail
+   scrolls internally rather than having its lower half become unreachable. */
+@media (min-width: 941px) {
+  .rail {
+    position: sticky;
+    top: calc(var(--bar-h) + 20px);
+    max-height: calc(100vh - var(--bar-h) - 40px);
+    overflow-y: auto;
+    /* room so the scrollbar never sits on top of the text */
+    padding-right: 4px;
+    scrollbar-width: thin;
+  }
+  .rail::-webkit-scrollbar { width: 6px; }
+  .rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 6px; }
+  .rail::-webkit-scrollbar-track { background: transparent; }
 }
 
 .rail__photo {
