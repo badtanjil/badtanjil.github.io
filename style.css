@@ -503,6 +503,8 @@ a { color: var(--accent-text); }
 
 .prose p { margin: 0 0 16px; max-width: var(--measure); }
 .prose p:last-child { margin-bottom: 0; }
+/* Home About runs the full width of its panel, like the publication rows below it */
+#about .prose p { max-width: none; }
 .prose a { color: var(--accent-text); text-decoration: none; border-bottom: 1px solid var(--accent-edge); }
 .prose a:hover { border-bottom-color: var(--accent-text); }
 .prose strong, .prose b { font-weight: 600; color: #f0f0f0; }
